@@ -87,9 +87,6 @@
 			}
 			else {
 				the_excerpt();
-				echo '<p class="gpk-read-more">';
-				echo '<a class="btn btn-sm btn-success" href="' . get_the_permalink($post->id) . '" rel="bookmark">Read more...</a>';
-				echo '</p>';
 			}
 		?>
 

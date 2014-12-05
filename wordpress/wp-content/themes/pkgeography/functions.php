@@ -43,6 +43,7 @@ add_theme_support('post-thumbnails');
 
 /**
  * Sets dimensions
+ * @internal: We keep the dashboard defualts for now
  */
 //set_post_thumbnail_size(250,200, true);
 
@@ -90,9 +91,15 @@ function set_custom_contactmethod( $contactmethods ) {
 /**
  * Trim trailing characters from excerpt
  */
-add_filter('excerpt_more', 'new_excerpt_more');
-function new_excerpt_more( $more ) {
-	return '...';
+add_filter('excerpt_more', 'gpk_excerpt_more');
+function gpk_excerpt_more( $more ) {
+	global $post;
+
+	$more = '...';
+	$more .= '<p class="gpk-read-more">';
+	$more .= '<a class="btn btn-sm btn-success" href="' . get_the_permalink($post->id) . '" rel="bookmark">Read more...</a>';
+	$more .= '</p>';
+	return $more;
 }
 
 
