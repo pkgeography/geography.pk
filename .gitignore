@@ -1,0 +1,10 @@
+.DS_Store
+.sass-cache/
+.tmp/
+node_modules/
+bower_components/
+test/
+tests/
+wordpress/*
+!wordpress/wp-content/themes/pkgeography/*
+wordpress/wp-content/themes/pkgeography/bower_components/

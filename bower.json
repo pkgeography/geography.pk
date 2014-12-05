@@ -1,0 +1,25 @@
+{
+  "name": "geography",
+  "version": "2.0.0",
+  "authors": [
+    "Jabran Rafique <hello@jabran.me>"
+  ],
+  "description": "Geography of Pakistan",
+  "main": "./index.php",
+  "license": "MIT",
+  "homepage": "http://geography.pk",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.0"
+  },
+  "devDependencies": {
+    "font-awesome": "~4.2.0",
+    "socialmedia": "~1.6.4"
+  }
+}
