@@ -39,6 +39,9 @@
 				<a class="gpk-icon-youtube" href="http://youtube.com/user/pkgeography" target="_blank"><i class="fa fa-youtube-square"></i></a>
 			</li>
 			<li>
+				<a class="gpk-icon-github" href="http://github.com/pkgeography" target="_blank"><i class="fa fa-github-square"></i></a>
+			</li>
+			<li>
 				<a class="gpk-icon-rss" href="http://feeds.feedburner.com/GeographyOfPakistan" target="_blank"><i class="fa fa-rss-square"></i></a>
 			</li>
 		</ul>

@@ -111,6 +111,10 @@
 .gpk-social-channels {
 	font-size: $font-size-h1;
 
+	@media(max-width: $screen-sm) and (orientation:portrait) {
+		font-size: $font-size-h2;
+	}
+
 	li {
 		padding-right: 0;
 
@@ -165,6 +169,16 @@
 			&:active,
 			&:focus {
 				color: darken($youtube-color, 10%);
+			}
+		}
+
+		.gpk-icon-github {
+			color: $github-color;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: darken($github-color, 10%);
 			}
 		}
 

@@ -9582,6 +9582,11 @@ blockquote:before {
 .gpk-social-channels {
   font-size: 41px;
 }
+@media (max-width: 768px) and (orientation: portrait) {
+  .gpk-social-channels {
+    font-size: 34px;
+  }
+}
 .gpk-social-channels li {
   padding-right: 0;
 }
@@ -9619,6 +9624,12 @@ blockquote:before {
 }
 .gpk-social-channels li .gpk-icon-youtube:hover, .gpk-social-channels li .gpk-icon-youtube:active, .gpk-social-channels li .gpk-icon-youtube:focus {
   color: #9e1317;
+}
+.gpk-social-channels li .gpk-icon-github {
+  color: #333333;
+}
+.gpk-social-channels li .gpk-icon-github:hover, .gpk-social-channels li .gpk-icon-github:active, .gpk-social-channels li .gpk-icon-github:focus {
+  color: #1a1a1a;
 }
 .gpk-social-channels li .gpk-icon-rss {
   color: #8d7f05;

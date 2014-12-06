@@ -27,6 +27,9 @@
 							<a class="gpk-icon-youtube" href="http://youtube.com/user/pkgeography" target="_blank"><i class="fa fa-youtube-square"></i></a>
 						</li>
 						<li>
+							<a class="gpk-icon-github" href="http://github.com/pkgeography" target="_blank"><i class="fa fa-github-square"></i></a>
+						</li>
+						<li>
 							<a class="gpk-icon-rss" href="http://feeds.feedburner.com/GeographyOfPakistan" target="_blank"><i class="fa fa-rss-square"></i></a>
 						</li>
 					</ul>
@@ -48,7 +51,7 @@
 					endif;
 					?>
 
-					<p>We use cookies on this website. By using this site, you agree that we may store and access cookies on your device. <a href="http://www.allaboutcookies.org/" target="_blank">Read more about cookies</a>. <a href="/about/privacy/">Read our privacy policy</a>.</p>
+					<p>Some of features of this website may use cookies in order to enhance your experience. By using this site, you agree that this website may store and access cookies on your device. <a href="http://www.allaboutcookies.org/" target="_blank">Read more about cookies</a>. <a href="/about/privacy/">Read our privacy policy</a>.</p>
 					<p><strong>Google Maps</strong> and <strong>Google Map Maker</strong> are products of <strong>Google Inc</strong>. This website is <strong>not affiliated with Google</strong>.</p>
 				</div>
 
@@ -56,9 +59,10 @@
 				<div class="col-sm-4 col-sm-offset-2">
 					<p><strong>&copy; 2010 &ndash; <?php echo date('Y'); ?> Geography of Pakistan</strong></p>
 					<p>
-						Except where otherwise noted, contents on this site are licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. All code and code samples at this site, blog and in projects by Geography of Pakistan are licensed under <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>. The contents still remain property of Geography of Pakistan.
+						Except where otherwise noted, contents on this site are licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. All code and code samples at this site, blog and projects by Geography of Pakistan are licensed under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>. The contents still remain property of Geography of Pakistan.
 					</p>
-					<p>Did you find a typo, anything broken or want to add new feature(s)? <strong><a href="https://github.com/pkgeography/geography.pk">Edit this website at Github</a></strong></p>
+					<p>Did you find a typo, anything broken or want to add new feature(s)?</p>
+					<p><i class="fa fa-github"></i> <strong><a href="https://github.com/pkgeography/geography.pk">Edit this website at Github &raquo;</a></strong></p>
 				</div>
 			</div>
 		</div>
