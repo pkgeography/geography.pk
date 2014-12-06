@@ -215,7 +215,7 @@ function gpk_theme_scripts() {
 	 * add main site stylesheet
 	 */
 	wp_enqueue_style('site-webfonts', '//fonts.googleapis.com/css?family=Lato:400,700|Raleway:700');
-	wp_enqueue_style('main-style', get_template_directory_uri() . '/css/style.min.css', null, 'v2.0.0');
+	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/css/style.min.css', null, 'v2.0.0');
 
 	/**
 	 * Add jQuery
@@ -226,12 +226,12 @@ function gpk_theme_scripts() {
 	 * Add Socialmedia.js
 	 */
 	if ( is_single() )
-		wp_enqueue_script('socialmedia-js', get_template_directory_uri() . '/js/socialmedia.min.js', null, 'v1.6.4', true);
+		wp_enqueue_script('socialmedia-js', get_stylesheet_directory_uri() . '/js/socialmedia.min.js', null, 'v1.6.4', true);
 
 	/**
 	 * Add main site script
 	 */
-	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.min.js', array('jquery'), 'v2.0.0', true);
+	wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.min.js', array('jquery'), 'v2.0.0', true);
 
 	/**
 	 * Inject LiveReload script
