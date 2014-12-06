@@ -1,0 +1,45 @@
+/**
+ * Footer
+ */
+
+.gpk-footer {
+	background-color: lighten($footer-bg, 10%);
+	font-size: 13px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+
+	a {
+		color: lighten(brown, 10%);
+		@include transition(color .2s ease-out);
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: darken(brown, 10%);
+			text-decoration: none;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+		}
+	}
+}
+
+// Footer directory
+.gpk-directory {
+	@media(max-width: $screen-xs) {
+		li {
+			display: list-item;
+			margin-bottom: 4px;
+
+			&:before {
+				display: inline-block;
+				content: '\2022';
+				margin-right: 10px;
+			}
+		}
+	}
+
+	a {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}

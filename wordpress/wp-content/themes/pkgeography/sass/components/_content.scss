@@ -1,0 +1,308 @@
+/**
+ * Content, pagination, Back to top
+ */
+
+.gpk-content {
+	margin-bottom: 18px;
+
+	.gpk-main {
+		background-color: white;
+		background-color: rgba(white, 0.75);
+		border-radius: 3px;
+		padding-top: 10px;
+		padding-bottom: 4em;
+	}
+
+	.page-header {
+		padding-bottom: 0;
+		margin-top: 18px;
+		margin-bottom: 18px;
+	}
+
+	.post-title {
+		margin-top: 0;
+
+		a {
+			text-decoration: none;
+
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+
+		@media(max-width: $screen-xs) {
+			font-size: 27px;
+		}
+	}
+}
+
+.gpk-single,
+.gpk-page {
+
+	.container {
+		position: relative;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $gpk-orange;
+			text-decoration: none;
+			border-bottom: 1px solid;
+		}
+	}
+
+	[id=ref],
+	[id=reference] {
+		font-size: small;
+
+		&:before {
+			display: block;
+			content: 'References:';
+			font-size: $font-size-h3;
+			font-weight: bold;
+			color: $text-color-light-gray;
+			margin-top: 18px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.gpk-post-tags {
+	color: $text-color-gray;
+	margin-top: 27px;
+	margin-bottom: 18px;
+
+	.fa-tags {
+		color: $gpk-brand-secondary;
+	}
+}
+
+
+.gpk-article {
+	border-bottom: 1px dotted darken($gpk-brand-primary, 5%);
+	padding-bottom: 10px;
+	margin-bottom: 27px;
+
+	&:last-child {
+		border-bottom: 0 none;
+	}
+
+	&.gpk-single-post {
+		border-bottom: 1px solid $gpk-brand-secondary;
+		margin-bottom: 4em;
+		padding-bottom: 18px;
+	}
+}
+
+
+.post-metadata {
+	color: $text-color-gray;
+
+	li {
+		margin-right: 10px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	a {
+		color: $gpk-brand-secondary;
+		text-decoration: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			text-decoration: none;
+			color: darken($gpk-brand-secondary, 10%);
+			border-bottom: 1px solid $gpk-brand-secondary;
+		}
+	}
+}
+
+.gpk-pagination {
+	text-align: center;
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			display: inline-block;
+		}
+
+		.page-numbers {
+			display: block;
+			padding: 4px 8px;
+			text-decoration: none;
+			border-bottom: 1px solid rgba(white, 0);
+
+			&:hover,
+			&:active,
+			&:focus {
+				border-bottom-color: $gpk-brand-primary;
+			}
+
+			&.current {
+				border-bottom: none;
+				font-weight: bold;
+			}
+		}
+
+		.prev,
+		.next {
+			background-color: white;
+			color: $gpk-brand-secondary;
+			padding: 4px 10px;
+			font-weight: bold;
+
+			&:hover,
+			&:active,
+			&:focus {
+				border: none;
+				color: darken($gpk-brand-secondary, 10%);
+			}
+		}
+	}
+
+}
+
+.gpk-back-to-top {
+	text-align: right;
+	font-size: $font-size-h1;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@media(max-width: $screen-xs) {
+		text-align: center;
+	}
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: lighten($gpk-brand-primary, 20%);
+
+		&::after {
+			display: block;
+			content: 'Back to top';
+			font-size: 13px;
+			font-weight: bold;
+			margin-right: -14px;
+
+			@media(max-width: $screen-xs) {
+				margin-right: 0;
+			}
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-bottom: 0 none;
+			text-decoration: none;
+			color: darken($gpk-brand-primary, 5%);
+		}
+	}
+}
+
+.gpk-tag-separator {
+	font-size: 10px;
+	color: $gpk-brand-secondary;
+}
+
+
+// Contact form
+.pkg-contact-form {
+	padding-top: 18px;
+	padding-bottom: 18px;
+
+	textarea {
+		resize: none;
+	}
+}
+
+.gpk-contact-notice {
+	font-size: smaller;
+	margin-top: 18px;
+}
+
+.gpk-form-alerts {
+	margin-top: 10px;
+}
+
+// Author page
+.gpk-author-meta {
+	color: #444;
+
+	.avatar {
+		float: left;
+		margin: 0 10px 10px 0;
+		border-radius: 100%;
+	}
+
+	.media {
+		margin-bottom: 18px;
+
+		// general social coloring
+		.fa-facebook-square,
+		.fa-facebook {
+			color: $facebook-color;
+		}
+
+		.fa-twitter-square,
+		.fa-twitter {
+			color: $twitter-color;
+		}
+
+		.fa-google-plus-square,
+		.fa-google-plus {
+			color: $gplus-color;
+		}
+	}
+}
+
+.gpk-author-social {
+	@media(min-width: $screen-sm)	{
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+// Search form
+.gpk-search-form {
+	margin-top: 18px;
+	margin-bottom: 18px;
+
+	.form-control {
+		height: auto;
+		padding: 5px 12px;
+	}
+}
+
+// Page description
+.gpk-page-description {
+	margin-bottom: 27px;
+}
+
+
+// Attachment image
+.gpk-attachment-image {
+	margin-bottom: 2em;
+	padding-bottom: 2em;
+	border-bottom: 2px solid $gpk-brand-secondary;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+// Comments
+.gpk-comments-area {
+	margin-bottom: 4em;
+}

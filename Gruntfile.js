@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'<%= config.app %>/css/style.css':'<%= config.app %>/sass/{,*/}*.{scss,sass}'
+					'<%= config.app %>/css/style.css':'<%= config.app %>/sass/style.scss'
 				},
 				options: {
 					style: 'expanded'

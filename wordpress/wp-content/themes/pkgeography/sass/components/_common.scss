@@ -1,0 +1,43 @@
+/**
+ *  Common styles
+ */
+
+a {
+	@include transition(color .2s ease-in-out);
+}
+
+.btn {
+	border: 0 none;
+	@include transition(background-color .2s ease-in-out);
+}
+
+blockquote {
+	font-family: $font-family-serif;
+	font-size: $font-size-base;
+	background-color: #eee;
+	border-color: $text-color-light-gray;
+	border-width: 10px;
+	font-weight: normal;
+	font-style: oblique;
+	position: relative;
+	padding-left: 72px;
+
+	@media(max-width: $screen-xs) {
+		padding: 72px 10px 10px;
+	}
+
+	&:before {
+		display: inline-block;
+		content: '“';
+		font-weight: bold;
+		font-size: 6em;
+		position: absolute;
+		color: #fff;
+		top: -18px;
+		left: 0;
+
+		@media(max-width: $screen-xs) {
+			top: -22px;
+		}
+	}
+}

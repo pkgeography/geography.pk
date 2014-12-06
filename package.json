@@ -1,5 +1,5 @@
 {
-  "name": "PKGeography",
+  "name": "Geography-of-Pakistan",
   "version": "2.0.0",
   "description": "Website of Geography of Pakistan",
   "main": "",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jabranr/php-server-boilerplate.git"
+    "url": "https://github.com/pkgeography/geography.pk.git"
   },
   "keywords": [
     "PHP",
@@ -17,9 +17,9 @@
   "author": "Jabran Rafique <hello@jabran.me>",
   "license": "MIT License",
   "bugs": {
-    "url": "https://github.com/jabranr/php-server-boilerplate/issues"
+    "url": "https://github.com/pkgeography/geography.pk/issues"
   },
-  "homepage": "https://github.com/jabranr/php-server-boilerplate",
+  "homepage": "http://geography.pk",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-cssmin": "^0.10.0",

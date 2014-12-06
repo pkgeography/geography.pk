@@ -1,10 +1,10 @@
 {
-  "name": "geography",
+  "name": "Geography-of-Pakistan",
   "version": "2.0.0",
   "authors": [
     "Jabran Rafique <hello@jabran.me>"
   ],
-  "description": "Geography of Pakistan",
+  "description": "Website of Geography of Pakistan",
   "main": "./index.php",
   "license": "MIT",
   "homepage": "http://geography.pk",

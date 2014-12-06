@@ -1,0 +1,181 @@
+/**
+ * Social
+ */
+
+.gpk-floating-social {
+	position: absolute;
+	margin: 380px 0 0 -#{$font-size-h4};
+	font-size: $font-size-h4;
+	line-height: 1.5;
+	background-color: white;
+	padding: 5px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+
+	@include transition(all, 0.1s ease-in-out);
+
+	&:hover,
+	&:active,
+	&:focus {
+		margin: 380px 0 0 -#{$font-size-h2};
+		font-size: $font-size-h2;
+		line-height: 1.15;
+		padding: 10px;
+	}
+
+	&.fixed {
+		position: fixed;
+		margin-top: 0;
+	}
+
+
+	ul, ol {
+		margin: 0;
+	}
+
+	a {
+		border-bottom: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-bottom: none;
+		}
+	}
+}
+
+// dynamic social icons
+.gpk-floating-social,
+.gpk-static-social {
+
+	.fa-facebook-square,
+	.fa-facebook {
+		color: lighten($facebook-color, 10%);
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: darken($facebook-color, 10%);
+		}
+	}
+
+	.fa-twitter-square,
+	.fa-twitter {
+		color: lighten($twitter-color, 10%);
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: darken($twitter-color, 10%);
+		}
+	}
+
+	.fa-google-plus-square,
+	.fa-google-plus {
+		color: lighten($gplus-color, 10%);
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: darken($gplus-color, 10%);
+		}
+	}
+}
+
+.gpk-static-social {
+	display: none;
+	margin-bottom: 4em;
+
+	@media(max-width: $screen-sm) {
+		display: block;
+	}
+
+	li {
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+
+	a {
+		font-size: $font-size-h2;
+		border-bottom: none;
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-bottom: none;
+		}
+	}
+}
+
+
+.gpk-social-channels {
+	font-size: $font-size-h1;
+
+	li {
+		padding-right: 0;
+
+		a {
+			display: block;
+			text-decoration: none;
+			border: none !important;
+
+			@include transition(color .2s ease-out);
+
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+
+		.gpk-icon-facebook {
+			color: $facebook-color;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: darken($facebook-color, 10%);
+			}
+		}
+
+		.gpk-icon-twitter {
+			color: $twitter-color;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: darken($twitter-color, 10%);
+			}
+		}
+
+		.gpk-icon-gplus {
+			color: $gplus-color;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: darken($gplus-color, 10%);
+			}
+		}
+
+		.gpk-icon-youtube {
+			color: $youtube-color;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: darken($youtube-color, 10%);
+			}
+		}
+
+		.gpk-icon-rss {
+			color: $rss-color;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: darken($rss-color, 10%);
+			}
+		}
+	}
+}
