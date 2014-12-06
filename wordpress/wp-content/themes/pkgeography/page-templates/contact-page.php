@@ -90,7 +90,7 @@ get_header();
 			<?php the_content(); ?>
 
 			<div class="form-horizontal pkg-contact-form">
-				<form autocomplete="off" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multiform/form-data">
+				<form autocomplete="off" action="<?php echo htmlentities(get_bloginfo('url') . '/contact/'); ?>" method="POST" enctype="multiform/form-data">
 					<div class="form-group<?php if (isset($errors['name'])) echo ' has-error'; ?>">
 						<label for="nameField" class="col-sm-2 control-label">Name:</label>
 						<div class="col-sm-8">
