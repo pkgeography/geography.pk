@@ -104,44 +104,6 @@ function gpk_excerpt_more( $more ) {
 
 
 /**
- * Setup title
- */
-add_filter( 'wp_title', 'gpk_wp_title', 10, 2 );
-function gpk_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-
-	/**
-	 * Add the site name.
-	 */
-	$title .= get_bloginfo( 'name', 'display' );
-
-
-	/**
-	 * Add the site description for the home/front page.
-	 */
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-
-
-	/**
-	 * Add a page number if necessary.
-	 */
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'pkgeography' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-
-
-/**
  * Back to top
  */
 function gpk_back_to_top() {
@@ -321,6 +283,26 @@ function gpk_get_post_url() {
 
 
 /**
+ * Setup title
+ */
+add_filter('wp_title', 'gpk_get_title', 10, 2);
+function gpk_get_title( $title, $sep ) {
+	global $post;
+
+	$site_description = get_bloginfo('description');
+
+	if ( is_home() &&  is_front_page() ) {
+		$title = get_bloginfo('name') . ( $site_description ? ' &ndash; ' . $site_description : '' );
+	}
+	else {
+		$title = $title . ' &ndash; ' . get_bloginfo('name');
+	}
+
+	return $title;
+}
+
+
+/**
  * Get post description or set default
  */
 function gpk_get_post_description() {
@@ -467,7 +449,7 @@ function gpk_wp_head() {
 
 	$html .= '<!-- Facebook open graph -->';
 	$html .= '<meta property="fb:app_id" content="369832136380065">';
-	$html .= '<meta property="fb:admins" content="1019220329,128200167240300">';
+	$html .= '<meta property="fb:admins" content="1019220329">';
 
 
 	/**
@@ -519,7 +501,7 @@ function gpk_wp_head() {
 	$html .= '<meta property="og:title" content="' . wp_title( '&ndash;', false, 'right' ) . '">';
 	$html .= '<meta property="og:url" content="' . gpk_get_post_url() . '">';
 	$html .= '<meta property="og:description" content="' . gpk_get_post_description() . '">';
-	$html .= '<meta property="og:image" content="">';
+	$html .= '<meta property="og:image" content="' . gpk_get_featured_image() . '">';
 
 	$html .= '<!-- Twitter card -->';
 	$html .= '<meta name="twitter:card" content="summary_large_image">';

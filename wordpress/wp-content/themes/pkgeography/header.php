@@ -14,7 +14,7 @@
 <!--[if gt IE 10]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie-modern"><![endif]-->
 <!--[if !IE]><html xmlns:fb="http://ogp.me/ns/fb#"><![endif]-->
 	<head prefix="og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# pkgeography:http://ogp.me/ns/fb/pkgeography">
-		<title><?php wp_title( '&ndash;', true, 'right' ); ?></title>
+		<title><?php wp_title( '', true, '' ); ?></title>
 
 		<!-- Default encoding -->
 		<meta charset="UTF-8">
