@@ -294,9 +294,9 @@ function gpk_get_title( $title, $sep ) {
 	if ( is_home() &&  is_front_page() ) {
 		$title = get_bloginfo('name') . ( $site_description ? ' &ndash; ' . $site_description : '' );
 	}
-	else {
-		$title = $title . ' &ndash; ' . get_bloginfo('name');
-	}
+	// else {
+	// 	$title = $title . ' &ndash; ' . get_bloginfo('name');
+	// }
 
 	return $title;
 }
