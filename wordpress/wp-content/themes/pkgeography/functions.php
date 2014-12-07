@@ -515,7 +515,7 @@ function gpk_wp_head() {
 	}
 
 	$html .= '<meta property="og:updated_time" content="' . get_the_modified_time('Y-m-d\TH:i:sP', true, $post->ID) . '">';
-	$html .= '<meta property="og:locale" content="en_PK">';
+	$html .= '<meta property="og:locale" content="en_US">';
 	$html .= '<meta property="og:title" content="' . wp_title( '&ndash;', false, 'right' ) . '">';
 	$html .= '<meta property="og:url" content="' . gpk_get_post_url() . '">';
 	$html .= '<meta property="og:description" content="' . gpk_get_post_description() . '">';
