@@ -330,7 +330,7 @@ function gpk_get_post_description() {
 		return 'Geography of Pakistan is your best comprehensive resource to geographical, geological and general information about Pakistan. Started back in November 2010 as a simple blog, has come a long way, from providing updates on Pakistan geography, maps and satellite imagery to open-data projects and being a leading portal of geographical knowledge.';
 	}
 	elseif ( is_singular() ) {
-		if ( $excerpt = get_the_excerpt() ) {
+		if ( $excerpt = $post->post_excerpt ) {
 			return $excerpt;
 		}
 		else {
