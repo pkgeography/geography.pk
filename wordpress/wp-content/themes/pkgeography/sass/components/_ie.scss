@@ -1,0 +1,11 @@
+.ie8, .ie-legacy {
+	.gpk-logo {
+		a {
+			background-image: url(../images/pkgeography_logo_compact.png);
+		}
+
+		@media (min-width: $screen-sm) {
+			background-image: url(../images/pkgeography_logo.png);
+		}
+	}
+}
