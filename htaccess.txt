@@ -938,6 +938,11 @@ FileETag None
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RedirectMatch 301 ^/_en/([^/]+)/$ http://geography.pk/blog/$1
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f

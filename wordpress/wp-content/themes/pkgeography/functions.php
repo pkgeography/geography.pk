@@ -95,11 +95,11 @@ add_filter('excerpt_more', 'gpk_excerpt_more');
 function gpk_excerpt_more( $more ) {
 	global $post;
 
-	$more = '...';
-	$more .= '<p class="gpk-read-more">';
-	$more .= '<a class="btn btn-sm btn-success" href="' . get_the_permalink($post->id) . '" rel="bookmark">Read more...</a>';
-	$more .= '</p>';
-	return $more;
+	$newMore = '...';
+	$newMore .= '<p class="gpk-read-more">';
+	$newMore .= '<a class="btn btn-sm btn-success" href="' . get_the_permalink($post->id) . '" rel="bookmark">Read more...</a>';
+	$newMore .= '</p>';
+	return $newMore;
 }
 
 
