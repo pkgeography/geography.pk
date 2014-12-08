@@ -8,6 +8,13 @@
 /**
  * Imports style
  */
+/**
+ * Import webfonts
+ */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Raleway:700);
+/**
+ * Import Bootstrap
+ */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -6808,6 +6815,9 @@ button.close {
     display: none !important;
   }
 }
+/**
+ * Import Font Awesome
+ */
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

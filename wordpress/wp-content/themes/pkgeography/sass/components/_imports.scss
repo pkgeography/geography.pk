@@ -1,7 +1,19 @@
-// Import Bootstrap
+
+/**
+ * Import webfonts
+ */
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Raleway:700);
+
+
+
+/**
+ * Import Bootstrap
+ */
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 
 
-// Import Font Awesome
+/**
+ * Import Font Awesome
+ */
 $fa-font-path: "fa-fonts";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";

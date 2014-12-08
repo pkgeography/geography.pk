@@ -174,9 +174,8 @@ add_action('wp_enqueue_scripts', 'gpk_theme_scripts');
 function gpk_theme_scripts() {
 
 	/**
-	 * add main site stylesheet
+	 * Add site stylesheets
 	 */
-	wp_enqueue_style('site-webfonts', '//fonts.googleapis.com/css?family=Lato:400,700|Raleway:700');
 	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/css/style.min.css', null, 'v2.0.0');
 
 	/**
