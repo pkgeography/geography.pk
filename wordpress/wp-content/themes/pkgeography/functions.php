@@ -192,7 +192,7 @@ function gpk_theme_scripts() {
 	/**
 	 * Add Socialmedia.js
 	 */
-	if ( is_single() )
+	if ( is_singular() )
 		wp_enqueue_script('socialmedia-js', get_stylesheet_directory_uri() . '/js/socialmedia.min.js', null, 'v1.6.4', true);
 
 	/**

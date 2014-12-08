@@ -6,6 +6,30 @@
 
 	var pkg = {};
 
+	pkg.fbappid = '369832136380065';
+
+	pkg.on = function(event, element, callback) {
+		if (document.addEventListener)
+			element.addEventListener(event, callback, false);
+		else
+			element.attachEvent('on' + event, callback);
+	};
+
+	pkg.domReady = function(callback) {
+		if (document.addEventListener)
+			document.addEventListener('DOMContentLoaded', callback);
+		else {
+			document.attachEvent('onreadystatechange', function() {
+				if (document.readyState === 'interactive')
+					callback();
+				});
+		}
+	};
+
+	pkg.domLoaded = function(callback) {
+		return pkg.on('load', window, callback);
+	};
+
 	pkg.backToTop =  function(e) {
 		e.preventDefault();
 		var $this = $(this);
@@ -79,6 +103,21 @@
 		return e.preventDefault();
 	};
 
+	pkg.socialShare = function(e) {
+		var $this = $(this);
+		var $type = $this.data('type');
+
+		if ( $type === 'facebook' ) {
+			pkg.facebook.Share();
+			e.preventDefault();
+		}
+
+		if ( $type === 'gplus' ) {
+			pkg.gplus.Share();
+			e.preventDefault();
+		}
+	};
+
 	pkg.init = function() {
 
 		// Back to top
@@ -104,9 +143,20 @@
 			$('.gpk-mobile-nav').slideToggle();
 		});
 
-
 		// Form client-side validation
 		$('#submitEnquiry').on('click', pkg.validate);
+
+		// Social share
+		$('.gpk-social-share').on('click', pkg.socialShare);
+
+		// Enable socialmedia.js on DOMLoad
+		pkg.domLoaded(function()	{
+			if ( $('.gpk-social-share').length ) {
+				pkg.facebook = new Socialmedia.Facebook({appid: '369832136380065'});
+				pkg.twitter = new Socialmedia.Twitter();
+				pkg.gplus = new Socialmedia.GooglePlus();
+			}
+		});
 
 	};
 
