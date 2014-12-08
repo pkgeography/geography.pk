@@ -107,10 +107,10 @@
 		var $this = $(this);
 		var $type = $this.data('type');
 
-		if ( $type === 'facebook' ) {
-			pkg.facebook.Share();
-			e.preventDefault();
-		}
+		// if ( $type === 'facebook' ) {
+		// 	pkg.facebook.Share();
+		// 	e.preventDefault();
+		// }
 
 		if ( $type === 'gplus' ) {
 			pkg.gplus.Share();
