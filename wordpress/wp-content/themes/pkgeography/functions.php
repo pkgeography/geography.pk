@@ -199,7 +199,7 @@ function gpk_theme_scripts() {
 	/**
 	 * Add main site script
 	 */
-	wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.min.js', array('jquery-js'), 'v2.0.0', true);
+	wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.min.js', array('jquery-min'), 'v2.0.0', true);
 
 	/**
 	 * Inject LiveReload script
