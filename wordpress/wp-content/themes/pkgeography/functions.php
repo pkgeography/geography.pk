@@ -290,13 +290,13 @@ function gpk_get_post_url() {
 /**
  * Setup title
  */
-add_filter('wp_title', 'gpk_get_title', 10, 2);
+// add_filter('wp_title', 'gpk_get_title', 10, 2);
 function gpk_get_title( $title, $sep ) {
 	global $post;
 
 	$site_description = get_bloginfo('description');
 
-	if ( is_home() &&  is_front_page() ) {
+	if ( is_home() &&  is_front_page() && empty($title) ) {
 		$title = get_bloginfo('name') . ( $site_description ? ' &ndash; ' . $site_description : '' );
 	}
 	// else {
