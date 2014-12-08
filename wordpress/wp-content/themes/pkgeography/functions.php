@@ -260,7 +260,12 @@ function gpk_get_featured_image() {
 
 	if ( is_singular() ) {
 		if ( has_post_thumbnail($post->ID) ) {
-			return get_the_post_thumbnail($post->ID, 'large');
+			$thumbnail_id = get_post_thumbnail_id( $post->ID );
+			$featured_img = wp_get_attachment_image_src($thumbnail_id, 'large');
+			if ( $featured_img[0] )
+				return $featured_img[0];
+			else
+				return get_stylesheet_directory_uri() . '/images/pkgeography_1024x1024.png';
 		}
 		else {
 			return get_stylesheet_directory_uri() . '/images/pkgeography_1024x1024.png';
@@ -290,18 +295,29 @@ function gpk_get_post_url() {
 /**
  * Setup title
  */
-// add_filter('wp_title', 'gpk_get_title', 10, 2);
-function gpk_get_title( $title, $sep ) {
+function gpk_get_title() {
 	global $post;
 
+	$site_name = get_bloginfo('name');
 	$site_description = get_bloginfo('description');
 
-	if ( is_home() &&  is_front_page() && empty($title) ) {
-		$title = get_bloginfo('name') . ( $site_description ? ' &ndash; ' . $site_description : '' );
+	$title = $site_name . ( $site_description ? ' &ndash; ' . $site_description : '' );
+
+	if ( is_search() ) {
+		$title =  get_the_title($post->ID) . ' &ndash; ' . $site_name;
 	}
-	// else {
-	// 	$title = $title . ' &ndash; ' . get_bloginfo('name');
-	// }
+
+	if ( is_archive() ) {
+		$title =  get_the_title($post->ID) . ' &ndash; ' . $site_name;
+	}
+
+	if ( is_404() ) {
+		$title =  get_the_title($post->ID) . ' &ndash; ' . $site_name;
+	}
+
+	if ( is_singular() ) {
+		$title = get_the_title($post->ID) . ' &ndash; ' . $site_name;
+	}
 
 	return $title;
 }
@@ -503,7 +519,7 @@ function gpk_wp_head() {
 
 	$html .= '<meta property="og:updated_time" content="' . get_the_modified_time('Y-m-d\TH:i:sP', true, $post->ID) . '">';
 	$html .= '<meta property="og:locale" content="en_US">';
-	$html .= '<meta property="og:title" content="' . wp_title( '&ndash;', false, 'right' ) . '">';
+	$html .= '<meta property="og:title" content="' . gpk_get_title() . '">';
 	$html .= '<meta property="og:url" content="' . gpk_get_post_url() . '">';
 	$html .= '<meta property="og:description" content="' . gpk_get_post_description() . '">';
 	$html .= '<meta property="og:image" content="' . gpk_get_featured_image() . '">';
@@ -512,7 +528,7 @@ function gpk_wp_head() {
 	$html .= '<meta name="twitter:card" content="summary_large_image">';
 	$html .= '<meta name="twitter:site" content="@pkgeography">';
 	$html .= '<meta name="twitter:creator" content="@pkgeography">';
-	$html .= '<meta name="twitter:title" content="' . wp_title( '&ndash;', false, 'right' ) . '">';
+	$html .= '<meta name="twitter:title" content="' . gpk_get_title() . '">';
 	$html .= '<meta name="twitter:description" content="' . gpk_get_post_description() . '">';
 	$html .= '<meta name="twitter:domain" content="' . gpk_get_post_url() . '">';
 	$html .= '<meta name="twitter:image:src" content="' . gpk_get_featured_image() . '">';
