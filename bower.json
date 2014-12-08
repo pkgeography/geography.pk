@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "font-awesome": "~4.2.0",
-    "socialmedia": "~1.6.4"
+    "socialmedia": "~1.6.4",
+    "respond": "~1.4.2"
   }
 }

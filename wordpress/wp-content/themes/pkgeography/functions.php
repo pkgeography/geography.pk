@@ -180,9 +180,15 @@ function gpk_theme_scripts() {
 	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/css/style.min.css', null, 'v2.0.0');
 
 	/**
-	 * Add jQuery
+	 * Add Respond.js
 	 */
-	wp_enqueue_script('jquery');
+	wp_enqueue_script('respond-js', get_stylesheet_directory_uri() . '/js/respond.min.js', array(), null, true);
+
+	/**
+	 * Disbale default and add custom jQuery
+	 */
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery-min', get_stylesheet_directory_uri() . '/js/jquery.min.js', array(), 'v1.11.1', true);
 
 	/**
 	 * Add Socialmedia.js
@@ -193,7 +199,7 @@ function gpk_theme_scripts() {
 	/**
 	 * Add main site script
 	 */
-	wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.min.js', array('jquery'), 'v2.0.0', true);
+	wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.min.js', array('jquery-js'), 'v2.0.0', true);
 
 	/**
 	 * Inject LiveReload script

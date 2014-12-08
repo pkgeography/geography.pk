@@ -13,17 +13,18 @@ $bot = false;
 if ( isset($_POST['gpk_cabatcha']) && $_POST['gpk_cabatcha'] ) {
 
 	/**
+	 * Collect quick info
+	 */
+	$quickInfo = array(
+			'IP' => $_SERVER['REMOTE_ADDR'],
+			'USER_AGENT' => $_SERVER['USER_AGENT']
+		);
+
+	/**
 	 * Check if it is possible bot
 	 */
 	if ( isset($_POST[$_POST['gpk_cabatcha']]) && $_POST[$_POST['gpk_cabatcha']] ) {
 
-		/**
-		 * Collect quick info
-		 */
-		$quickInfo = array(
-				'IP' => $_SERVER['REMOTE_ADDR'],
-				'USER_AGENT' => $_SERVER['USER_AGENT']
-			);
 
 		/**
 		 * Send alert email to admin
@@ -58,11 +59,18 @@ if ( isset($_POST['gpk_cabatcha']) && $_POST['gpk_cabatcha'] ) {
 			$errors['email'] = 'A valid email is required.';
 		}
 
-		elseif ( ! $enquiry || strlen($enquiry) > 5000 ) {
+		elseif ( ! $enquiry ) {
 			$errors['message'] = 'Your message is required.';
 		}
 
+		elseif ( $enquiry || strlen($enquiry) > 5000 ) {
+			$errors['message'] = 'Your message is bit too long... o.O';
+		}
+
 		else {
+
+			$enquiry .= '<br /><hr />';
+			$enquiry .= implode(PHP_EOL, $quickInfo);
 
 			if ( wp_mail('admin@geography.pk', 'Message by ' . $enquirer_name . ' - Geography of Pakistan', $enquiry, 'From: ' . $enquirer_name . '<' . $email . '>' . "\r\n" ) ) {
 				header('Location: thank-you/?done=1&lang=en');
@@ -116,7 +124,7 @@ get_header();
 						<div class="col-sm-8 col-sm-offset-2">
 							<input type="hidden" tabindex="-1" name="gpk_<?php echo sha1(time()); ?>" value="" class="cabatcha form-control">
 							<input type="hidden" tabindex="-1" name="gpk_cabatcha" value="gpk_<?php echo sha1(time()); ?>" class="form-control">
-							<button type="submit" class="btn btn-success">Send Enquiry &raquo;</button>
+							<button type="submit" id="submitEnquiry" class="btn btn-success">Send Enquiry &raquo;</button>
 							<p class="gpk-contact-notice">
 								We may record and send information about your IP address and browser with this enquiry. Read our <a href="/about/privacy/">privacy policy</a> for more information.
 							</p>
