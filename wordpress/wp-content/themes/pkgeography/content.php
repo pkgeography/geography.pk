@@ -41,7 +41,7 @@
 
 			<?php if ( is_single() ) : ?>
 				<li>
-					<i class="fa fa-folder-open-o"></i>&nbsp;<?php the_category(', ', 'single', $post->ID); ?>
+					<i class="fa fa-folder-open-o"></i>&nbsp;<?php the_terms($post->ID, gpk_get_all_categories($post)); ?>
 				</li>
 			<?php endif; ?>
 

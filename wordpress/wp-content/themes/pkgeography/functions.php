@@ -6,7 +6,6 @@
  */
 
 
-
 /**
  * Register sidebar
  */
@@ -43,7 +42,7 @@ add_theme_support('post-thumbnails');
 
 /**
  * Sets dimensions
- * @internal: We keep the dashboard defualts for now
+ * @internal: We keep the dashboard defaults for now
  */
 //set_post_thumbnail_size(250,200, true);
 
@@ -535,3 +534,75 @@ function gpk_wp_head() {
 
 	echo $html;
 }
+
+
+/**
+ * Get all default and custom categories
+ */
+function gpk_get_all_categories( $post ) {
+	$default = array('category');
+	$custom = get_taxonomies( array(
+			'public' => true,
+			'_builtin' => false
+		), 'names', 'and' );
+
+	return array_merge($default, $custom);
+}
+
+
+/**
+ * Custom features
+ */
+require 'inc/gpk-post-type.php';
+require 'inc/gpk-featured-image.php';
+
+
+
+/**
+ * Add custom post types to main query
+ */
+// add_action('pre_get_posts', 'gpk_add_to_main_query');
+// function gpk_add_to_main_query( $query ) {
+// 	if ( is_home() && $query->is_main_query() ) {
+// 		$query->set( 'post_type', get_post_types( array(
+// 					'public' => true
+// 				), 'names' ) );
+// 	}
+// }
+
+
+/**
+ * Get latest featured
+ */
+
+function gpk_get_latest_featured() {
+	$gpk_featured = new WP_Query( array(
+			'post_type' => 'gpk_featured',
+			'post_per_page' => 1
+		)
+	);
+
+	$featured = array();
+
+	if ( $gpk_featured->have_posts() ) {
+
+		while ( $gpk_featured->have_posts() ) {
+			$gpk_featured->the_post();
+
+			if ( has_post_thumbnail() ) {
+				$thumbnail_id = get_post_thumbnail_id( $post->ID );
+				if ( $featured_img = wp_get_attachment_image_src($thumbnail_id, 'large') ) {
+					$featured['image']['src'] = $featured_img[0];
+					$featured['image']['width'] = $featured_img[1];
+					$featured['image']['height'] = $featured_img[2];
+				}
+			}
+
+			$featured['title'] = get_the_title();
+			$featured['excerpt'] = get_the_excerpt();
+		}
+	}
+
+	return $featured;
+}
+

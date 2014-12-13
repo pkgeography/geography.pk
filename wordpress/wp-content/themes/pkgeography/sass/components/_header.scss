@@ -3,107 +3,6 @@
  */
 
 .gpk-header {
-	background-color: transparent;
-
-	&.gpk-khasoosi {
-		position: relative;
-		background: transparent url(https://scontent-b-ams.xx.fbcdn.net/hphotos-prn2/v/t1.0-9/536938_424645710945926_337769841_n.png?oh=f54c01f43fce68bad59ad1a7f0e6d861&oe=5546355A);
-		background-position: 0 70%;
-		background-size: cover;
-		height: 150px;
-		cursor: pointer;
-
-		@include transition (all 0.5s ease-in-out);
-
-		.gpk-maloomat {
-			position: absolute;
-			bottom: 5px;
-			left: 5px;
-			max-width: 100%;
-			padding: 5px 10px;
-			word-wrap: break-word;
-			color: $gray-lighter;
-			text-shadow: 0 1px 4px $gray-dark;
-
-			.gpk-desktop {
-				display: none;
-			}
-
-			.gpk-mobile {
-				display: block;
-			}
-
-			.gpk-azafi-maloomat {
-				display: none;
-			}
-		}
-
-
-
-		&:hover,
-		&:active,
-		&:focus,
-		&.hover {
-			height: 400px;
-			background-position: 0 center;
-
-			.gpk-maloomat {
-				bottom: auto;
-			}
-
-			.gpk-azafi-maloomat {
-				display: block;
-
-				@media (max-width: ($screen-sm - 1)) {
-					padding: 10px;
-					margin-top: 10px;
-					color: initial;
-					text-shadow: none;
-					border-radius: 3px;
-					background-color: rgba(white, 0.5);
-				}
-			}
-
-			.gpk-logo {
-				opacity: 0.3;
-			}
-		}
-
-		@media (min-width: $screen-sm) {
-			height: 175px;
-
-			.gpk-maloomat {
-				top: 10px;
-				right: 10px;
-				left: auto;
-				bottom: auto;
-				max-width: 500px;
-				padding: 10px 18px;
-				border-radius: 3px;
-				background-color: rgba(white, 0.5);
-				color: inherit;
-				text-shadow: none;
-
-				.gpk-desktop {
-					display: block;
-				}
-
-				.gpk-mobile {
-					display: none;
-				}
-
-			}
-
-			// &:hover,
-			// &:active,
-			// &:focus,
-			// &.hover {
-			// 	right: 5px;
-			// 	max-width: 100px;
-			// }
-
-		}
-	}
 }
 
 .gpk-logo {
@@ -200,10 +99,6 @@
 	font-size: $font-size-h5;
 	text-transform: uppercase;
 	display: none;
-
-	&.gpk-khasoosi-nav {
-		box-shadow: 0 -2px 5px #333;
-	}
 
 	.gpk-desktop-nav {
 		margin-bottom: 0;

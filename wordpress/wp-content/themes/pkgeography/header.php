@@ -54,7 +54,7 @@
 	<body>
 
 		<!-- header -->
-		<div class="gpk-header gpk-khasoosi">
+		<div class="gpk-header">
 			<div class="container">
 
 				<div class="clearfix">
@@ -62,22 +62,9 @@
 						<a rel="home" href="<?php echo site_url(); ?>">Geography of Pakistan</a>
 					</h1>
 
-					<div class="gpk-maloomat">
-						<div class="gpk-maloomat-heading">
-							<div class="gpk-desktop">
-								<i class="fa fa-globe"></i> Gawadar
-							</div>
-							<div class="gpk-mobile">
-								<i class="fa fa-info-circle"></i>
-							</div>
-						</div>
-						<p class="gpk-azafi-maloomat">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
+
+					<?php print_r(gpk_get_latest_featured()); ?>
+
 
 					<!-- Mobile nav -->
 					<div class="gpk-primary-nav-mobile">
@@ -111,7 +98,7 @@
 		</div>
 
 		<!-- Desktop nav -->
-		<div class="gpk-primary-nav gpk-khasoosi-nav">
+		<div class="gpk-primary-nav">
 			<div class="container">
 				<?php
 					/**

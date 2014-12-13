@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Archive template
+ * Featured Archive template
  */
 
 get_header(); ?>
@@ -24,7 +24,7 @@ get_header(); ?>
 						elseif ( is_year() ) :
 							printf( __( 'Archive for %s', 'pkgeography' ), get_the_date('Y') );
 						else :
-							_e( 'Archive', 'pkgeography' );
+							_e( 'Featured <small>at Geography of Pakistan</small>', 'pkgeography' );
 						endif;
 					?>
 				</h1>
@@ -39,7 +39,7 @@ get_header(); ?>
 								elseif ( is_year() ) :
 									printf( __( 'Yearly archive for %s', 'pkgeography' ), get_bloginfo('name') );
 								else :
-									_e( 'Uncategorized archived articles', 'pkgeography' );
+									_e( 'Featured archive', 'pkgeography' );
 								endif;
 							?>
 						</li>
@@ -48,16 +48,16 @@ get_header(); ?>
 			</header>
 
 			<p class="lead gpk-page-description">
-				Here is list of all articles
+				Here is a complete list of everything
 				<?php
 					if ( is_day() ) :
-						printf( __( ' published on %s', 'pkgeography' ), get_the_date() );
+						printf( __( ' featured on %s', 'pkgeography' ), get_the_date() );
 					elseif ( is_month() ) :
-						printf( __( ' published during month of %s', 'pkgeography' ), get_the_date('F Y') );
+						printf( __( ' featured during month of %s', 'pkgeography' ), get_the_date('F Y') );
 					elseif ( is_year() ) :
-						printf( __( ' published during year of %s', 'pkgeography' ), get_the_date('Y') );
+						printf( __( ' featured during year of %s', 'pkgeography' ), get_the_date('Y') );
 					else :
-						printf( __( ' published.', 'pkgeography' ) );
+						printf( __(' featured.', 'pkgeography') );
 					endif;
 				?> If you are unable to find your required information then try using the search feature.
 			</p>
