@@ -3,6 +3,44 @@
  */
 
 .gpk-header {
+
+	&.gpk-featured {
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center 20%;
+		box-shadow: inset -2px 0 4px rgba(black, 0.2);
+
+		@include transition(all 0.2s ease-in-out);
+
+		.gpk-featured-container {
+			position: absolute;
+			right: 18px;
+			top: 18px;
+		}
+
+		.gpk-f-info-btn {
+			text-align: right;
+			cursor: pointer;
+			color: white;
+			text-shadow: 0 1px 5px rgba(black, 0.4);
+
+			h3 {
+				margin: 0;
+				display: inline-block;
+				padding: 5px;
+			}
+		}
+
+		.gpk-f-info {
+			display: none;
+			max-width: 500px;
+			padding: 10px;
+			border-radius: 3px;
+			background-color: rgba(white, 0.85);
+		}
+
+	}
 }
 
 .gpk-logo {

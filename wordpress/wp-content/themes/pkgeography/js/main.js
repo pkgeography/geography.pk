@@ -118,6 +118,28 @@
 		}
 	};
 
+	pkg.toggleFeaturedContainer = function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $featured = $('.gpk-featured');
+		var $fa = $this.find('.fa');
+
+		$fa.toggleClass('fa-info-circle fa-times-circle');
+
+		$featured.css({
+			'height': ($fa.hasClass('fa-times-circle') ? '400px' : 'inherit')
+		}).find('.gpk-f-info').toggle({ display: 'none block' });
+	};
+
+	pkg.processFeatured = function() {
+		var $featured = $('.gpk-featured');
+		if ( $featured.length > 0 ) {
+			$featured.css({
+				'background-image': 'url(' + $featured.data('f-i-src') + ')'
+			});
+		}
+	};
+
 	pkg.init = function() {
 
 		// Back to top
@@ -156,7 +178,13 @@
 				pkg.twitter = new Socialmedia.Twitter();
 				pkg.gplus = new Socialmedia.GooglePlus();
 			}
+
+			pkg.processFeatured();
+
 		});
+
+		// Toggle featured container
+		$('.gpk-f-info-btn').on('click', pkg.toggleFeaturedContainer);
 
 	};
 

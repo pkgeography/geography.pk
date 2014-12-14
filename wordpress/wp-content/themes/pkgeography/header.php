@@ -35,10 +35,12 @@
 		<meta name="msapplication-square310x310logo" content="<?php echo get_stylesheet_directory_uri(); ?>/images/mstile-310x310.png">
 		<meta name="msapplication-wide310x150logo" content="<?php echo get_stylesheet_directory_uri(); ?>/images/mstile-310x150.png">
 		<?php
+
 		/**
 		 * Add wp_head()
 		 */
 		wp_head();
+
 
 		/**
 		 * Only make it available for production
@@ -54,7 +56,19 @@
 	<body>
 
 		<!-- header -->
-		<div class="gpk-header">
+		<?php
+
+		/**
+		 * Featured image
+		 */
+
+		if ( gpk_get_latest_featured() && count(gpk_get_latest_featured()) )
+			$latestFeatured = gpk_get_latest_featured();
+		else
+			$latestFeatured = false;
+
+		?>
+		<div class="gpk-header<?php echo $latestFeatured ? ' gpk-featured' :''; ?>"<?php echo $latestFeatured ? ' data-f-i-src="' . $latestFeatured['image']['src'] . '"' :''; ?>>
 			<div class="container">
 
 				<div class="clearfix">
@@ -62,9 +76,19 @@
 						<a rel="home" href="<?php echo site_url(); ?>">Geography of Pakistan</a>
 					</h1>
 
+					<?php if ( $latestFeatured ) : ?>
 
-					<?php print_r(gpk_get_latest_featured()); ?>
+					<div class="gpk-featured-container">
+						<div class="gpk-f-info-btn" role="button">
+							<h3><i class="fa fa-info-circle"></i></h3>
+						</div>
+						<div class="gpk-f-info">
+							<?php if (isset($latestFeatured['title'])) echo '<h4 class="gpk-f-heading">' . $latestFeatured['title'] . '</h4>'; ?>
+							<?php if (isset($latestFeatured['excerpt'])) echo '<div class="gpk-f-more-info">' . $latestFeatured['excerpt'] . '</div>'; ?>
+						</div>
+					</div>
 
+					<?php endif; ?>
 
 					<!-- Mobile nav -->
 					<div class="gpk-primary-nav-mobile">

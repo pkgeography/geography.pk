@@ -9055,6 +9055,40 @@ blockquote:before {
 /**
  * Header, Primary navigation
  */
+.gpk-header.gpk-featured {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 20%;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.gpk-header.gpk-featured .gpk-featured-container {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+.gpk-header.gpk-featured .gpk-f-info-btn {
+  text-align: right;
+  cursor: pointer;
+  color: white;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+.gpk-header.gpk-featured .gpk-f-info-btn h3 {
+  margin: 0;
+  display: inline-block;
+  padding: 5px;
+}
+.gpk-header.gpk-featured .gpk-f-info {
+  display: none;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
 .gpk-logo {
   display: inline-block;
   margin: 0 0 18px;

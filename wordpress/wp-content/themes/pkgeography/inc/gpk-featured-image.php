@@ -25,7 +25,6 @@ gpk_add_post_type('gpk_featured', array(
 		'description' => __( 'Featured Image hosts historical facts for famous persons, landmarks and much more. When there is no Featured Image, it may display randomly selected pictures of Pakistani landscape from Flickr.' ),
 		'supports' => array(
 			'title',
-			'editor',
 			'author',
 			'thumbnail',
 			'excerpt',

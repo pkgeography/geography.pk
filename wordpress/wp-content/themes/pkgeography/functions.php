@@ -600,6 +600,13 @@ function gpk_get_latest_featured() {
 
 			$featured['title'] = get_the_title();
 			$featured['excerpt'] = get_the_excerpt();
+			// $featured['link'] = '';
+			// $featured['credit'] = '';
+			// $featured['lat'] = '';
+			// $featured['lng'] = '';
+			// $featured['x'] = '';
+			// $featured['y'] = '';
+			// $featured['cover'] = '';
 		}
 	}
 
