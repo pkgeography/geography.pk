@@ -70,11 +70,10 @@ gpk_add_taxonomy('gpk_featured_category', array('gpk_featured'), array(
 
 
 /**
- * Add credit meta box
+ * Add and save credit meta box
  */
 
-gpk_add_meta_boxes('gpk_featured_credit', 'Credits', 'gpk_featured', 'side', 'core', array(
-		'nonce' => 'gpk_featured_credit_nonce',
+gpk_add_meta_boxes('gpk_featured_credit', 'Credits', 'gpk_featured', 'advanced', 'core', array(
 		'label' => 'Add credits for featured item',
 		'name' => 'gpk_featured_credit_field',
 		'id' => 'gpk_featured_credit_field',
@@ -82,15 +81,112 @@ gpk_add_meta_boxes('gpk_featured_credit', 'Credits', 'gpk_featured', 'side', 'co
 	)
 );
 
-add_action('save_post', 'gpk_featured_credit_save');
-function gpk_featured_credit_save( $post_id )	{
-	// if ( ! isset( $_POST['gpk_featured_credit_nonce'] ) ) return;
-	// if ( ! wp_verify_nonce( $_POST['gpk_featured_credit_nonce'], 'gpk_featured_credit_nonce' ) ) return;
-	// if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
-	// if ( isset($_POST['post_type']) && 'gpk_featured' === $_POST[['post_type']] ) {
-	// 	if ( ! current_user_can('edit_post', $post_id) ) return;
-	// }
-	// if ( ! isset( $_POST['gpk_featured_credit_field'] ) ) return;
-	$metadata = sanitize_text_field( $_POST['gpk_featured_credit_field'] );
-	update_post_meta($post_id, 'gpk_featured_credit_field', $metadata);
-}
+gpk_save_meta_box( array(
+		'id' => 'gpk_featured_credit',
+		'field' => 'gpk_featured_credit_field',
+		'post_type' => 'gpk_featured'
+	)
+);
+
+
+/**
+ * Add and save link meta box
+ */
+
+gpk_add_meta_boxes('gpk_featured_link', 'Link', 'gpk_featured', 'normal', 'low', array(
+		'label' => 'Add featured item link',
+		'name' => 'gpk_featured_link_field',
+		'id' => 'gpk_featured_link_field',
+		'size' => '50'
+	)
+);
+
+gpk_save_meta_box( array(
+		'id' => 'gpk_featured_link',
+		'field' => 'gpk_featured_link_field',
+		'post_type' => 'gpk_featured'
+	)
+);
+
+
+/**
+ * Add and save location lat meta box
+ */
+
+gpk_add_meta_boxes('gpk_featured_lat', 'Latitude', 'gpk_featured', 'normal', 'low', array(
+		'label' => 'Add featured item location latitude',
+		'name' => 'gpk_featured_lat_field',
+		'id' => 'gpk_featured_lat_field',
+		'size' => '25'
+	)
+);
+
+gpk_save_meta_box( array(
+		'id' => 'gpk_featured_lat',
+		'field' => 'gpk_featured_lat_field',
+		'post_type' => 'gpk_featured'
+	)
+);
+
+
+/**
+ * Add and save location lng meta box
+ */
+
+gpk_add_meta_boxes('gpk_featured_lng', 'Longitude', 'gpk_featured', 'normal', 'low', array(
+		'label' => 'Add featured item location longitude',
+		'name' => 'gpk_featured_lng_field',
+		'id' => 'gpk_featured_lng_field',
+		'size' => '25'
+	)
+);
+
+gpk_save_meta_box( array(
+		'id' => 'gpk_featured_lng',
+		'field' => 'gpk_featured_lng_field',
+		'post_type' => 'gpk_featured'
+	)
+);
+
+
+/**
+ * Add and save background-x position meta box
+ */
+
+gpk_add_meta_boxes('gpk_featured_bgx', 'Background X Position', 'gpk_featured', 'side', 'low', array(
+		'label' => 'Add featured item background horizontal (x) position in px or %',
+		'name' => 'gpk_featured_bgx_field',
+		'id' => 'gpk_featured_bgx_field',
+		'size' => '25'
+	)
+);
+
+gpk_save_meta_box( array(
+		'id' => 'gpk_featured_bgx',
+		'field' => 'gpk_featured_bgx_field',
+		'post_type' => 'gpk_featured'
+	)
+);
+
+
+
+/**
+ * Add and save background-y position meta box
+ */
+
+gpk_add_meta_boxes('gpk_featured_bgy', 'Background Y Position', 'gpk_featured', 'side', 'low', array(
+		'label' => 'Add featured item background vertical (y) position in px or %',
+		'name' => 'gpk_featured_bgy_field',
+		'id' => 'gpk_featured_bgy_field',
+		'size' => '25'
+	)
+);
+
+gpk_save_meta_box( array(
+		'id' => 'gpk_featured_bgy',
+		'field' => 'gpk_featured_bgy_field',
+		'post_type' => 'gpk_featured'
+	)
+);
+
+

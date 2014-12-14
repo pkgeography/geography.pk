@@ -70,12 +70,12 @@ function gpk_add_meta_boxes( $id, $title, $post_type, $context = 'advanced', $pr
 		/**
 		 * Add meta box
 		 */
-		add_meta_box($id, $title, function($post, $metabox)	{
+		add_meta_box($id, $title, function($post, $metabox) use($id, $title, $post_type)	{
 
 			/**
 			 * Set wp nonce
 			 */
-			wp_nonce_field($id, $metabox['args']['nonce']);
+			wp_nonce_field($id, $id . '_nonce');
 
 			/**
 			 * Get existing value
@@ -114,3 +114,55 @@ function gpk_add_meta_boxes( $id, $title, $post_type, $context = 'advanced', $pr
 	});
 
 }
+
+
+/**
+ * Save post custom metadata
+ */
+function gpk_save_meta_box( $metabox = array() ) {
+
+	/**
+	 * Save metadata using save_post action hook
+	 */
+	add_action('save_post', function( $post_id ) use($metabox)	{
+
+		/**
+		 * Return if no nonce
+		 */
+		if ( ! isset( $_POST[$metabox['id'] . '_nonce'] ) ) return;
+
+		/**
+		 * Return if nonce not verified
+		 */
+		if ( ! wp_verify_nonce( $_POST[$metabox['id'] . '_nonce'], $metabox['id'] ) ) return;
+
+		/**
+		 * Return on autosave
+		 */
+		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
+
+		/**
+		 * Return if user capabilities are limited
+		 */
+		if ( isset($_POST['post_type']) && $metabox['post_type'] === $_POST['post_type'] ) {
+			if ( ! current_user_can('edit_post', $post_id) ) return;
+		}
+
+		/**
+		 * Return if no metabox is set in POST request
+		 */
+		if ( ! isset( $_POST[$metabox['field']] ) ) return;
+
+		/**
+		 * Get metabox value and sanitize data
+		 */
+		$metadata = sanitize_text_field( $_POST[$metabox['field']] );
+
+		/**
+		 * Update metabox data
+		 */
+		update_post_meta($post_id, $metabox['field'], $metadata);
+
+	});
+}
+
