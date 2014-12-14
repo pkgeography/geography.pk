@@ -80,7 +80,7 @@
 
 					<div class="gpk-featured-container">
 						<div class="gpk-f-info-btn" role="button">
-							<h3><i class="fa fa-info-circle"></i></h3>
+							<h4><i class="fa fa-info-circle"></i></h4>
 						</div>
 						<div class="gpk-f-info">
 							<?php if (isset($latestFeatured['title'])) echo '<h4 class="gpk-f-heading">' . $latestFeatured['title'] . '</h4>'; ?>

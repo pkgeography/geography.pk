@@ -67,3 +67,30 @@ gpk_add_taxonomy('gpk_featured_category', array('gpk_featured'), array(
 		'update_count_callback' => '_update_post_term_count'
 	)
 );
+
+
+/**
+ * Add credit meta box
+ */
+
+gpk_add_meta_boxes('gpk_featured_credit', 'Credits', 'gpk_featured', 'side', 'core', array(
+		'nonce' => 'gpk_featured_credit_nonce',
+		'label' => 'Add credits for featured item',
+		'name' => 'gpk_featured_credit_field',
+		'id' => 'gpk_featured_credit_field',
+		'size' => '25'
+	)
+);
+
+add_action('save_post', 'gpk_featured_credit_save');
+function gpk_featured_credit_save( $post_id )	{
+	// if ( ! isset( $_POST['gpk_featured_credit_nonce'] ) ) return;
+	// if ( ! wp_verify_nonce( $_POST['gpk_featured_credit_nonce'], 'gpk_featured_credit_nonce' ) ) return;
+	// if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
+	// if ( isset($_POST['post_type']) && 'gpk_featured' === $_POST[['post_type']] ) {
+	// 	if ( ! current_user_can('edit_post', $post_id) ) return;
+	// }
+	// if ( ! isset( $_POST['gpk_featured_credit_field'] ) ) return;
+	$metadata = sanitize_text_field( $_POST['gpk_featured_credit_field'] );
+	update_post_meta($post_id, 'gpk_featured_credit_field', $metadata);
+}
