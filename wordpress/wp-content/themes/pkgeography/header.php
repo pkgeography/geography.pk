@@ -67,6 +67,31 @@
 		else
 			$latestFeatured = false;
 
+		if ( $latestFeatured ) {
+			$now = time();
+			$dateNow = getdate($now);
+			$dayToday = (int) $dateNow['mday'];
+			$monthToday = (int) $dateNow['mon'];
+			$yearToday = (int) $dateNow['year'];
+
+			$dateFrom = getdate(strtotime($latestFeatured['available_from']));
+			$dayFrom = (int) $dateFrom['mday'];
+			$monthFrom = (int) $dateFrom['mon'];
+			$yearFrom = (int) $dateFrom['year'];
+
+			$dateUntil = getdate(strtotime($latestFeatured['available_until']));
+			$dayUntil = (int) $dateUntil['mday'];
+			$monthUntil = (int) $dateUntil['mon'];
+			$yearUntil = (int) $dateUntil['year'];
+
+			$availableForThisDay = ($dayToday >= $dayFrom && $dayToday <= $dayUntil);
+			$availableForThisMonth = ($monthToday >= $monthFrom && $monthToday <= $monthUntil);
+			$availableForThisYear = ($yearToday >= $yearFrom && $yearToday <= $yearUntil);
+
+			if ( ! ($availableForThisDay && $availableForThisMonth && $availableForThisYear) )
+				$latestFeatured = false;
+		}
+
 		?>
 		<div class="gpk-header<?php echo $latestFeatured ? ' gpk-featured' :''; ?>"<?php echo $latestFeatured ? ' data-f-i-src="' . $latestFeatured['image']['src'] . '"' :''; ?>>
 			<div class="container">
@@ -84,7 +109,12 @@
 						</div>
 						<div class="gpk-f-info">
 							<?php if (isset($latestFeatured['title'])) echo '<h4 class="gpk-f-heading">' . $latestFeatured['title'] . '</h4>'; ?>
-							<?php if (isset($latestFeatured['excerpt'])) echo '<div class="gpk-f-more-info">' . $latestFeatured['excerpt'] . '</div>'; ?>
+							<?php if (isset($latestFeatured['excerpt'])) echo '<div class="gpk-f-more-info"><p>' . $latestFeatured['excerpt'] . '</p></div>'; ?>
+							<?php if (isset($latestFeatured['link'])) echo '<p><a rel="follow" role="button" target="_blank" href="' . $latestFeatured['link'] . '">Read more...</a></p>' ?>
+							<ul class="list-inline">
+							<?php if (isset($latestFeatured['credit'])) echo '<li>&copy; ' . $latestFeatured['credit'] . '</li>'; ?>
+							<?php if (isset($latestFeatured['lat']) && isset($latestFeatured['lng'])) echo '<li><i class="fa fa-globe"></i> <a rel="nofollow" href="https://maps.google.com/?q=' . $latestFeatured['lat'] . ',' . $latestFeatured['lng'] . '&z=6" target="_blank">Location</a></li>'; ?>
+							</ul>
 						</div>
 					</div>
 

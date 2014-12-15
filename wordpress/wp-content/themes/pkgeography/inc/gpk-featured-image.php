@@ -190,3 +190,45 @@ gpk_save_meta_box( array(
 );
 
 
+/**
+ * Add and save from date meta box
+ */
+
+gpk_add_meta_boxes('gpk_featured_from_date', 'Available From', 'gpk_featured', 'side', 'low', array(
+		'label' => 'Add date/time (yyyy-mm-dd hh:mm:ss) featured item is available from',
+		'name' => 'gpk_featured_from_date_field',
+		'id' => 'gpk_featured_from_date_field',
+		'size' => '25'
+	)
+);
+
+gpk_save_meta_box( array(
+		'id' => 'gpk_featured_from_date',
+		'field' => 'gpk_featured_from_date_field',
+		'post_type' => 'gpk_featured'
+	)
+);
+
+
+
+
+/**
+ * Add and save until date meta box
+ */
+
+gpk_add_meta_boxes('gpk_featured_until_date', 'Available Until', 'gpk_featured', 'side', 'low', array(
+		'label' => 'Add date/time (yyyy-mm-dd hh:mm:ss) featured item is available until',
+		'name' => 'gpk_featured_until_date_field',
+		'id' => 'gpk_featured_until_date_field',
+		'size' => '25'
+	)
+);
+
+gpk_save_meta_box( array(
+		'id' => 'gpk_featured_until_date',
+		'field' => 'gpk_featured_until_date_field',
+		'post_type' => 'gpk_featured'
+	)
+);
+
+

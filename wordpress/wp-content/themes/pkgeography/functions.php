@@ -557,7 +557,6 @@ require 'inc/gpk-post-type.php';
 require 'inc/gpk-featured-image.php';
 
 
-
 /**
  * Add custom post types to main query
  */
@@ -598,15 +597,17 @@ function gpk_get_latest_featured() {
 				}
 			}
 
+			$featured['id'] = $gpk_featured->post->ID;
 			$featured['title'] = get_the_title();
 			$featured['excerpt'] = get_the_excerpt();
-			// $featured['link'] = '';
-			// $featured['credit'] = '';
-			// $featured['lat'] = '';
-			// $featured['lng'] = '';
-			// $featured['x'] = '';
-			// $featured['y'] = '';
-			// $featured['cover'] = '';
+			$featured['link'] = end(get_post_meta($featured['id'], 'gpk_featured_link_field'));
+			$featured['credit'] = end(get_post_meta($featured['id'], 'gpk_featured_credit_field'));
+			$featured['lat'] = end(get_post_meta($featured['id'], 'gpk_featured_lat_field'));
+			$featured['lng'] = end(get_post_meta($featured['id'], 'gpk_featured_lng_field'));
+			$featured['x'] = end(get_post_meta($featured['id'], 'gpk_featured_bgx_field'));
+			$featured['y'] = end(get_post_meta($featured['id'], 'gpk_featured_bgy_field'));
+			$featured['available_from'] = end(get_post_meta($featured['id'], 'gpk_featured_from_date_field'));
+			$featured['available_until'] = end(get_post_meta($featured['id'], 'gpk_featured_until_date_field'));
 		}
 	}
 
