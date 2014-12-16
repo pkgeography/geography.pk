@@ -67,29 +67,21 @@
 		else
 			$latestFeatured = false;
 
+
+		/**
+		 * Verify if available in current date
+		 */
 		if ( $latestFeatured ) {
-			$now = time();
-			$dateNow = getdate($now);
-			$dayToday = (int) $dateNow['mday'];
-			$monthToday = (int) $dateNow['mon'];
-			$yearToday = (int) $dateNow['year'];
 
-			$dateFrom = getdate(strtotime($latestFeatured['available_from']));
-			$dayFrom = (int) $dateFrom['mday'];
-			$monthFrom = (int) $dateFrom['mon'];
-			$yearFrom = (int) $dateFrom['year'];
+			if ( isset($latestFeatured['available']) && $latestFeatured['available'] ) {
+				$availableDates = explode(',', $latestFeatured['available']);
 
-			$dateUntil = getdate(strtotime($latestFeatured['available_until']));
-			$dayUntil = (int) $dateUntil['mday'];
-			$monthUntil = (int) $dateUntil['mon'];
-			$yearUntil = (int) $dateUntil['year'];
-
-			$availableForThisDay = ($dayToday >= $dayFrom && $dayToday <= $dayUntil);
-			$availableForThisMonth = ($monthToday >= $monthFrom && $monthToday <= $monthUntil);
-			$availableForThisYear = ($yearToday >= $yearFrom && $yearToday <= $yearUntil);
-
-			if ( ! ($availableForThisDay && $availableForThisMonth && $availableForThisYear) )
+				if ( ! gpk_available_today( $availableDates[0], $availableDates[1] ) )
+					$latestFeatured = false;
+			}
+			else {
 				$latestFeatured = false;
+			}
 		}
 
 		?>
@@ -109,11 +101,21 @@
 						</div>
 						<div class="gpk-f-info">
 							<?php if (isset($latestFeatured['title'])) echo '<h4 class="gpk-f-heading">' . $latestFeatured['title'] . '</h4>'; ?>
-							<?php if (isset($latestFeatured['excerpt'])) echo '<div class="gpk-f-more-info"><p>' . $latestFeatured['excerpt'] . '</p></div>'; ?>
-							<?php if (isset($latestFeatured['link'])) echo '<p><a rel="follow" role="button" target="_blank" href="' . $latestFeatured['link'] . '">Read more...</a></p>' ?>
+							<?php if (isset($latestFeatured['content'])) echo '<div class="gpk-f-more-info"><p>' . $latestFeatured['content'] . '</p></div>'; ?>
+
 							<ul class="list-inline">
-							<?php if (isset($latestFeatured['credit'])) echo '<li>&copy; ' . $latestFeatured['credit'] . '</li>'; ?>
-							<?php if (isset($latestFeatured['lat']) && isset($latestFeatured['lng'])) echo '<li><i class="fa fa-globe"></i> <a rel="nofollow" href="https://maps.google.com/?q=' . $latestFeatured['lat'] . ',' . $latestFeatured['lng'] . '&z=6" target="_blank">Location</a></li>'; ?>
+								<?php
+
+									if (isset($latestFeatured['credit']) && $latestFeatured['credit'])
+										echo '<li>' . $latestFeatured['credit'] . '</li>';
+
+									if (isset($latestFeatured['lat']) && $latestFeatured['lat'] && isset($latestFeatured['lng']) && $latestFeatured['lng'])
+										echo '<li><i class="fa fa-map-marker"></i> <a rel="nofollow" href="https://maps.google.com/?q=' . $latestFeatured['lat'] . ',' . $latestFeatured['lng'] . '&z=6" target="_blank">Location</a></li>';
+
+									if (isset($latestFeatured['link']) && $latestFeatured['link'])
+										echo '<li><i class="fa fa-link"></i> <a rel="follow" role="button" target="_blank" href="' . $latestFeatured['link'] . '">Read more...</a></li>';
+
+								?>
 							</ul>
 						</div>
 					</div>

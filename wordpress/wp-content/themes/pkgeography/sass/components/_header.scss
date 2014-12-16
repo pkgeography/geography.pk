@@ -4,6 +4,8 @@
 
 .gpk-header {
 
+	@include transition(all 0.3s ease-in-out);
+
 	&.gpk-featured {
 		position: relative;
 		background-repeat: no-repeat;
@@ -11,7 +13,7 @@
 		background-position: center 20%;
 		box-shadow: inset -2px 0 4px rgba(black, 0.2);
 
-		@include transition(all 0.2s ease-in-out);
+
 
 		.gpk-featured-container {
 			position: absolute;
@@ -40,6 +42,14 @@
 			background-color: rgba(white, 0.85);
 		}
 
+	}
+
+	&.gpk-extended	{
+		height: 400px;
+
+		.gpk-f-info {
+			display: block;
+		}
 	}
 }
 

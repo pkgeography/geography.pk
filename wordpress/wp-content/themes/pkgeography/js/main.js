@@ -124,11 +124,15 @@
 		var $featured = $('.gpk-featured');
 		var $fa = $this.find('.fa');
 
+		/**
+		 * Toggle button
+		 */
 		$fa.toggleClass('fa-info-circle fa-times-circle');
 
-		$featured.css({
-			'height': ($fa.hasClass('fa-times-circle') ? '400px' : 'inherit')
-		}).find('.gpk-f-info').toggle({ display: 'none block' });
+		/**
+		 * Toggle extended class for display + CSS animation
+		 */
+		$featured.toggleClass('gpk-extended');
 	};
 
 	pkg.processFeatured = function() {

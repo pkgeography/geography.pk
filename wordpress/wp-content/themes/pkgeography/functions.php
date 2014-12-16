@@ -600,17 +600,46 @@ function gpk_get_latest_featured() {
 			$featured['id'] = $gpk_featured->post->ID;
 			$featured['title'] = get_the_title();
 			$featured['excerpt'] = get_the_excerpt();
+			$featured['content'] = get_the_content();
 			$featured['link'] = end(get_post_meta($featured['id'], 'gpk_featured_link_field'));
 			$featured['credit'] = end(get_post_meta($featured['id'], 'gpk_featured_credit_field'));
-			$featured['lat'] = end(get_post_meta($featured['id'], 'gpk_featured_lat_field'));
-			$featured['lng'] = end(get_post_meta($featured['id'], 'gpk_featured_lng_field'));
-			$featured['x'] = end(get_post_meta($featured['id'], 'gpk_featured_bgx_field'));
-			$featured['y'] = end(get_post_meta($featured['id'], 'gpk_featured_bgy_field'));
-			$featured['available_from'] = end(get_post_meta($featured['id'], 'gpk_featured_from_date_field'));
-			$featured['available_until'] = end(get_post_meta($featured['id'], 'gpk_featured_until_date_field'));
+			$featured['latlng'] = end(get_post_meta($featured['id'], 'gpk_featured_latlng_field'));
+			$featured['xy'] = end(get_post_meta($featured['id'], 'gpk_featured_bg_position_field'));
+			$featured['available'] = end(get_post_meta($featured['id'], 'gpk_featured_available_date_field'));
 		}
 	}
 
 	return $featured;
+}
+
+
+
+/**
+ * Check given date against today date
+ */
+
+function gpk_available_today( $from, $until ) {
+
+	$now = time();
+	$dateNow = getdate($now);
+	$dayToday = (int) $dateNow['mday'];
+	$monthToday = (int) $dateNow['mon'];
+	$yearToday = (int) $dateNow['year'];
+
+	$dateFrom = getdate( strtotime($from) );
+	$dayFrom = (int) $dateFrom['mday'];
+	$monthFrom = (int) $dateFrom['mon'];
+	$yearFrom = (int) $dateFrom['year'];
+
+	$dateUntil = getdate( strtotime($until) );
+	$dayUntil = (int) $dateUntil['mday'];
+	$monthUntil = (int) $dateUntil['mon'];
+	$yearUntil = (int) $dateUntil['year'];
+
+	$availableForThisDay = ($dayToday >= $dayFrom && $dayToday <= $dayUntil);
+	$availableForThisMonth = ($monthToday >= $monthFrom && $monthToday <= $monthUntil);
+	$availableForThisYear = ($yearToday >= $yearFrom && $yearToday <= $yearUntil);
+
+	return ($availableForThisDay && $availableForThisMonth && $availableForThisYear);
 }
 

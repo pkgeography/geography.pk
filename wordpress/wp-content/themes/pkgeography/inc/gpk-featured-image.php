@@ -25,6 +25,7 @@ gpk_add_post_type('gpk_featured', array(
 		'description' => __( 'Featured Image hosts historical facts for famous persons, landmarks and much more. When there is no Featured Image, it may display randomly selected pictures of Pakistani landscape from Flickr.' ),
 		'supports' => array(
 			'title',
+			'editor',
 			'author',
 			'thumbnail',
 			'excerpt',
@@ -90,11 +91,11 @@ gpk_save_meta_box( array(
 
 
 /**
- * Add and save link meta box
+ * Add and save external link meta box
  */
 
-gpk_add_meta_boxes('gpk_featured_link', 'Link', 'gpk_featured', 'normal', 'low', array(
-		'label' => 'Add featured item link',
+gpk_add_meta_boxes('gpk_featured_link', 'External Resource Link', 'gpk_featured', 'normal', 'low', array(
+		'label' => 'Add link to external resource for featured item',
 		'name' => 'gpk_featured_link_field',
 		'id' => 'gpk_featured_link_field',
 		'size' => '50'
@@ -110,125 +111,61 @@ gpk_save_meta_box( array(
 
 
 /**
- * Add and save location lat meta box
+ * Add and save location lat/lng meta box
  */
 
-gpk_add_meta_boxes('gpk_featured_lat', 'Latitude', 'gpk_featured', 'normal', 'low', array(
-		'label' => 'Add featured item location latitude',
-		'name' => 'gpk_featured_lat_field',
-		'id' => 'gpk_featured_lat_field',
+gpk_add_meta_boxes('gpk_featured_latlng', 'Location Lat/Lng', 'gpk_featured', 'normal', 'low', array(
+		'label' => 'Add featured item location latitude and longitude separated by comma',
+		'name' => 'gpk_featured_latlng_field',
+		'id' => 'gpk_featured_latlng_field',
 		'size' => '25'
 	)
 );
 
 gpk_save_meta_box( array(
-		'id' => 'gpk_featured_lat',
-		'field' => 'gpk_featured_lat_field',
+		'id' => 'gpk_featured_latlng',
+		'field' => 'gpk_featured_latlng_field',
 		'post_type' => 'gpk_featured'
 	)
 );
 
 
 /**
- * Add and save location lng meta box
+ * Add and save background position meta box
  */
 
-gpk_add_meta_boxes('gpk_featured_lng', 'Longitude', 'gpk_featured', 'normal', 'low', array(
-		'label' => 'Add featured item location longitude',
-		'name' => 'gpk_featured_lng_field',
-		'id' => 'gpk_featured_lng_field',
+gpk_add_meta_boxes('gpk_featured_bg_position', 'Background Position', 'gpk_featured', 'normal', 'low', array(
+		'label' => 'Add featured item background (x,y) positions in px or %, separated by comma',
+		'name' => 'gpk_featured_bg_position_field',
+		'id' => 'gpk_featured_bg_position_field',
 		'size' => '25'
 	)
 );
 
 gpk_save_meta_box( array(
-		'id' => 'gpk_featured_lng',
-		'field' => 'gpk_featured_lng_field',
+		'id' => 'gpk_featured_bg_position',
+		'field' => 'gpk_featured_bg_position_field',
 		'post_type' => 'gpk_featured'
 	)
 );
 
 
 /**
- * Add and save background-x position meta box
+ * Add and save from/until date meta box
  */
 
-gpk_add_meta_boxes('gpk_featured_bgx', 'Background X Position', 'gpk_featured', 'side', 'low', array(
-		'label' => 'Add featured item background horizontal (x) position in px or %',
-		'name' => 'gpk_featured_bgx_field',
-		'id' => 'gpk_featured_bgx_field',
-		'size' => '25'
+gpk_add_meta_boxes('gpk_featured_available_date', 'Available Between', 'gpk_featured', 'normal', 'low', array(
+		'label' => 'Add date/time (yyyy-mm-dd hh:mm:ss) featured item is available between, separated by comma',
+		'name' => 'gpk_featured_available_date_field',
+		'id' => 'gpk_featured_available_date_field',
+		'size' => '50'
 	)
 );
 
 gpk_save_meta_box( array(
-		'id' => 'gpk_featured_bgx',
-		'field' => 'gpk_featured_bgx_field',
+		'id' => 'gpk_featured_available_date',
+		'field' => 'gpk_featured_available_date_field',
 		'post_type' => 'gpk_featured'
 	)
 );
-
-
-
-/**
- * Add and save background-y position meta box
- */
-
-gpk_add_meta_boxes('gpk_featured_bgy', 'Background Y Position', 'gpk_featured', 'side', 'low', array(
-		'label' => 'Add featured item background vertical (y) position in px or %',
-		'name' => 'gpk_featured_bgy_field',
-		'id' => 'gpk_featured_bgy_field',
-		'size' => '25'
-	)
-);
-
-gpk_save_meta_box( array(
-		'id' => 'gpk_featured_bgy',
-		'field' => 'gpk_featured_bgy_field',
-		'post_type' => 'gpk_featured'
-	)
-);
-
-
-/**
- * Add and save from date meta box
- */
-
-gpk_add_meta_boxes('gpk_featured_from_date', 'Available From', 'gpk_featured', 'side', 'low', array(
-		'label' => 'Add date/time (yyyy-mm-dd hh:mm:ss) featured item is available from',
-		'name' => 'gpk_featured_from_date_field',
-		'id' => 'gpk_featured_from_date_field',
-		'size' => '25'
-	)
-);
-
-gpk_save_meta_box( array(
-		'id' => 'gpk_featured_from_date',
-		'field' => 'gpk_featured_from_date_field',
-		'post_type' => 'gpk_featured'
-	)
-);
-
-
-
-
-/**
- * Add and save until date meta box
- */
-
-gpk_add_meta_boxes('gpk_featured_until_date', 'Available Until', 'gpk_featured', 'side', 'low', array(
-		'label' => 'Add date/time (yyyy-mm-dd hh:mm:ss) featured item is available until',
-		'name' => 'gpk_featured_until_date_field',
-		'id' => 'gpk_featured_until_date_field',
-		'size' => '25'
-	)
-);
-
-gpk_save_meta_box( array(
-		'id' => 'gpk_featured_until_date',
-		'field' => 'gpk_featured_until_date_field',
-		'post_type' => 'gpk_featured'
-	)
-);
-
 
