@@ -1,13 +1,31 @@
+/**
+ * Occasional themes
+ */
+// $gpk-mourn: #808080;
 
+
+/**
+ * Occasional overrides
+ */
+// $gpk-green: $gpk-mourn;
+// $gpk-blue: $gpk-mourn;
+// $gpk-orange: darken($gpk-mourn, 10%);
+// $brand-success: darken($gpk-mourn, 10%);
+
+
+/**
+ * Defaults
+ */
 $bg-color: #d9dbc9;
 $footer-bg: #b6cc6a;
 $dark-green: #363;
 $text-color-gray: #888;
 $text-color-light-gray: #ddd;
 
-$gpk-blue: #3daeff;
-$gpk-green: #090;
-$gpk-orange: #ff5f3a;
+$gpk-blue: #3daeff !default;
+$gpk-green: #090 !default;
+$gpk-orange: #ff5f3a !default;
+
 
 $gpk-link-hover-primary: #c30;
 $gpk-link-hover-secondary: #c30;

@@ -6,6 +6,15 @@
  * Variables style
  */
 /**
+ * Occasional themes
+ */
+/**
+ * Occasional overrides
+ */
+/**
+ * Defaults
+ */
+/**
  * Imports style
  */
 /**
@@ -9116,6 +9125,12 @@ blockquote:before {
   -webkit-transition: opacity 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+  /* Firefox 3.5+ */
+  filter: url(../images/filters.svg#grayscale);
+  /* IE6-9 */
+  filter: gray;
+  /* Google Chrome, Safari 6+ & Opera 15+ */
+  -webkit-filter: grayscale(1);
 }
 .gpk-logo a {
   display: block;
