@@ -32,6 +32,15 @@
 		}
 
 	}
+
+	/* Firefox 3.5+ */
+	filter: url(../images/filters.svg#grayscale);
+
+	/* IE6-9 */
+	filter: gray;
+
+	/* Google Chrome, Safari 6+ & Opera 15+ */
+	-webkit-filter: grayscale(1);
 }
 
 // Mobile nav
