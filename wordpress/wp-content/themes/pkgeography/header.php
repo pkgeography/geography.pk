@@ -28,12 +28,17 @@
 		<link rel="apple-touch-icon" sizes="75x75" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-75x75.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-120x120.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-152x152.png">
+		<meta name="apple-mobile-web-app-title" content="PAK Geography">
+		<meta name="application-name" content="Geography of Pakistan">
 		<meta name="msapplication-TileColor" content="#009900">
 		<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/images/mstile-144x144.png">
 		<meta name="msapplication-square70x70logo" content="<?php echo get_stylesheet_directory_uri(); ?>/images/mstile-70x70.png">
 		<meta name="msapplication-square150x150logo" content="<?php echo get_stylesheet_directory_uri(); ?>/images/mstile-150x150.png">
 		<meta name="msapplication-square310x310logo" content="<?php echo get_stylesheet_directory_uri(); ?>/images/mstile-310x310.png">
 		<meta name="msapplication-wide310x150logo" content="<?php echo get_stylesheet_directory_uri(); ?>/images/mstile-310x150.png">
+		<meta http-equiv="cleartype" content="on">
+		<meta name="mobile-web-app-capable" content="yes">
+	    <meta name="theme-color" content="#009900">
 		<?php
 
 		/**
