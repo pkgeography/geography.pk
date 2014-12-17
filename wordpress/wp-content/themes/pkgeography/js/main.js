@@ -137,9 +137,10 @@
 
 	pkg.processFeatured = function() {
 		var $featured = $('.gpk-featured');
-		if ( $featured.length > 0 ) {
+		if ( $featured.length > 0 && $featured.data('f-i-src') ) {
 			$featured.css({
-				'background-image': 'url(' + $featured.data('f-i-src') + ')'
+				'background-image': 'url(' + $featured.data('f-i-src') + ')',
+				'background-position': ($featured.data('f-i-xy') ? $featured.data('f-i-xy').split(',').join(' ') : 'center 20%')
 			});
 		}
 	};

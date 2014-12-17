@@ -604,8 +604,8 @@ function gpk_get_latest_featured() {
 			$featured['link'] = end(get_post_meta($featured['id'], 'gpk_featured_link_field'));
 			$featured['credit'] = end(get_post_meta($featured['id'], 'gpk_featured_credit_field'));
 			$featured['latlng'] = end(get_post_meta($featured['id'], 'gpk_featured_latlng_field'));
-			$featured['xy'] = end(get_post_meta($featured['id'], 'gpk_featured_bg_position_field'));
-			$featured['available'] = end(get_post_meta($featured['id'], 'gpk_featured_available_date_field'));
+			$featured['image']['xy'] = end(get_post_meta($featured['id'], 'gpk_featured_bg_position_field'));
+			$featured['available_between'] = end(get_post_meta($featured['id'], 'gpk_featured_available_date_field'));
 		}
 	}
 

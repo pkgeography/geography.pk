@@ -78,8 +78,11 @@
 		 */
 		if ( $latestFeatured ) {
 
-			if ( isset($latestFeatured['available']) && $latestFeatured['available'] ) {
-				$availableDates = explode(',', $latestFeatured['available']);
+			if ( isset($latestFeatured['available_between']) && $latestFeatured['available_between'] ) {
+				$availableDates = explode(',', $latestFeatured['available_between']);
+
+				if ( isset($latestFeatured['xy']) && $latestFeatured['xy'] )
+					list($featuredBgX, $featuredBgY) = explode(',', $latestFeatured['xy']);
 
 				if ( ! gpk_available_today( $availableDates[0], $availableDates[1] ) )
 					$latestFeatured = false;
@@ -87,10 +90,27 @@
 			else {
 				$latestFeatured = false;
 			}
+
+		}
+
+		$featuredHTML = '';
+		if ( $latestFeatured ) {
+
+			if ( isset($latestFeatured['image']) && $latestFeatured['image']['src'] && $latestFeatured['image']['src'] )
+				$featuredHTML .= ' data-f-i-src="' . $latestFeatured['image']['src'] . '"';
+
+			if ( isset($latestFeatured['image']) && $latestFeatured['image']['width'] && $latestFeatured['image']['width'] )
+				$featuredHTML .= ' data-f-i-width="' . $latestFeatured['image']['width'] . '"';
+
+			if ( isset($latestFeatured['image']) && $latestFeatured['image']['height'] && $latestFeatured['image']['height'] )
+				$featuredHTML .= ' data-f-i-height="' . $latestFeatured['image']['height'] . '"';
+
+			if ( isset($latestFeatured['image']) && $latestFeatured['image']['xy'] && $latestFeatured['image']['xy'] )
+				$featuredHTML .= ' data-f-i-xy="' . $latestFeatured['image']['xy'] . '"';
 		}
 
 		?>
-		<div class="gpk-header<?php echo $latestFeatured ? ' gpk-featured' :''; ?>"<?php echo $latestFeatured ? ' data-f-i-src="' . $latestFeatured['image']['src'] . '"' :''; ?>>
+		<div class="gpk-header<?php echo $latestFeatured ? ' gpk-featured' :''; ?>"<?php echo $featuredHTML; ?>>
 			<div class="container">
 
 				<div class="clearfix">
@@ -114,11 +134,11 @@
 									if (isset($latestFeatured['credit']) && $latestFeatured['credit'])
 										echo '<li>' . $latestFeatured['credit'] . '</li>';
 
-									if (isset($latestFeatured['lat']) && $latestFeatured['lat'] && isset($latestFeatured['lng']) && $latestFeatured['lng'])
-										echo '<li><i class="fa fa-map-marker"></i> <a rel="nofollow" href="https://maps.google.com/?q=' . $latestFeatured['lat'] . ',' . $latestFeatured['lng'] . '&z=6" target="_blank">Location</a></li>';
+									if (isset($latestFeatured['latlng']) && $latestFeatured['latlng'] )
+										echo '<li><i class="fa fa-map-marker"></i> <a rel="nofollow" href="https://maps.google.com/?q=' . $latestFeatured['latlng'] . '&z=6" target="_blank">Location</a></li>';
 
 									if (isset($latestFeatured['link']) && $latestFeatured['link'])
-										echo '<li><i class="fa fa-link"></i> <a rel="follow" role="button" target="_blank" href="' . $latestFeatured['link'] . '">Read more...</a></li>';
+										echo '<li><small><i class="fa fa-link"></i></small> <a rel="follow" role="button" target="_blank" href="' . $latestFeatured['link'] . '">More &raquo;</a></li>';
 
 								?>
 							</ul>
