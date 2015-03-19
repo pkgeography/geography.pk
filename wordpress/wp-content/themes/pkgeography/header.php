@@ -7,11 +7,11 @@
 ?>
 
 <!doctype HTML>
-<!--[if lt IE 8]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie-legacy"><![endif]-->
-<!--[if IE 8]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie8"><![endif]-->
-<!--[if IE 9]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie9"><![endif]-->
-<!--[if gt IE 9]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie10 ie-modern"><![endif]-->
-<!--[if !IE]<!--><html xmlns:fb="http://ogp.me/ns/fb#" class="modern-browser"><!-- <![endif]-->
+<!--[if lt IE 8]><html xmlns:fb="http://ogp.me/ns/fb#" class="no-js ie-legacy"><![endif]-->
+<!--[if IE 8]><html xmlns:fb="http://ogp.me/ns/fb#" class="no-js ie8"><![endif]-->
+<!--[if IE 9]><html xmlns:fb="http://ogp.me/ns/fb#" class="no-js ie9"><![endif]-->
+<!--[if gt IE 9]><html xmlns:fb="http://ogp.me/ns/fb#" class="no-js ie10 ie-modern"><![endif]-->
+<!--[if !IE]<!--><html xmlns:fb="http://ogp.me/ns/fb#" class="no-js modern-browser"><!-- <![endif]-->
 	<head prefix="og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# pkgeography:http://ogp.me/ns/fb/pkgeography">
 		<title><?php wp_title( '&ndash;', true, 'right' ); ?></title>
 

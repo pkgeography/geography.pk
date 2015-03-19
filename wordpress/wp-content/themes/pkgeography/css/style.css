@@ -9487,6 +9487,13 @@ blockquote:before {
   color: white;
 }
 
+.no-js .gpk-primary-nav-mobile {
+  display: none;
+}
+.no-js .gpk-mobile-nav {
+  display: block;
+}
+
 .gpk-primary-nav {
   background-color: #5cb85c;
   margin: 0 auto 4em;

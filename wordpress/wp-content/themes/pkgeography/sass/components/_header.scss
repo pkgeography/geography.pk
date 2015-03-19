@@ -97,6 +97,17 @@
 	}
 }
 
+// accessible mobile nav
+.no-js {
+	.gpk-primary-nav-mobile {
+		display: none;
+	}
+
+	.gpk-mobile-nav {
+		display: block;
+	}
+}
+
 // primary nav
 .gpk-primary-nav {
 	background-color: $brand-success;

@@ -120,6 +120,9 @@
 
 	pkg.init = function() {
 
+		// Set JavaScript availability flag
+		$('html').toggleClass('no-js js');
+
 		// Back to top
 		$('.gpk-back-to-top').on('click', pkg.backToTop);
 
