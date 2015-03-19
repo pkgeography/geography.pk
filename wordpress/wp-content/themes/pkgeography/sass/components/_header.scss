@@ -17,6 +17,7 @@
 	a {
 		display: block;
 		background-image: url(../images/pkgeography_logo_compact_2x.png);
+		background-image: url(../images/pkgeography_logo_compact.svg);
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
@@ -27,20 +28,12 @@
 
 		@media (min-width: $screen-sm) {
 			background-image: url(../images/pkgeography_logo_2x.png);
+			background-image: url(../images/pkgeography_logo.svg);
 			width: 200px;
 			height: 124px;
 		}
 
 	}
-
-	/* Firefox 3.5+ */
-	filter: url(../images/filters.svg#grayscale);
-
-	/* IE6-9 */
-	filter: gray;
-
-	/* Google Chrome, Safari 6+ & Opera 15+ */
-	-webkit-filter: grayscale(1);
 }
 
 // Mobile nav
