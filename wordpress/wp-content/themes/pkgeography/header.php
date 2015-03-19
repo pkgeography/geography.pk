@@ -10,9 +10,8 @@
 <!--[if lt IE 8]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie-legacy"><![endif]-->
 <!--[if IE 8]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie8"><![endif]-->
 <!--[if IE 9]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie9"><![endif]-->
-<!--[if IE 10]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie10"><![endif]-->
-<!--[if gt IE 10]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie-modern"><![endif]-->
-<!--[if !IE]><html xmlns:fb="http://ogp.me/ns/fb#"><![endif]-->
+<!--[if gt IE 9]><html xmlns:fb="http://ogp.me/ns/fb#" class="ie10 ie-modern"><![endif]-->
+<!--[if !IE]<!--><html xmlns:fb="http://ogp.me/ns/fb#" class="modern-browser"><!-- <![endif]-->
 	<head prefix="og:http://ogp.me/ns# fb:http://ogp.me/ns/fb# pkgeography:http://ogp.me/ns/fb/pkgeography">
 		<title><?php wp_title( '&ndash;', true, 'right' ); ?></title>
 
