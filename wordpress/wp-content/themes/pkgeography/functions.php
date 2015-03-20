@@ -6,6 +6,12 @@
  */
 
 
+/**
+ * Setup current environment
+ */
+define( 'PKG_SERVER', 'http://geography.pk' );
+define( 'ENV_DEV', (strpos(PKG_SERVER, $_SERVER['SERVER_NAME']) === false) );
+
 
 /**
  * Register sidebar
