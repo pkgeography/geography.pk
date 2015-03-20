@@ -20,7 +20,7 @@
 /**
  * Import webfonts
  */
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700|Raleway:700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,500,300italic,500italic|Raleway:700);
 /**
  * Import Bootstrap
  */
@@ -1420,7 +1420,7 @@ html {
 }
 
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.42857;
   color: #333333;
@@ -1520,7 +1520,7 @@ hr {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.15;
   color: inherit;
 }
@@ -6403,7 +6403,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.4;
@@ -6514,7 +6514,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 1.42857;
@@ -9347,6 +9347,10 @@ button.close {
 /**
  *  Common styles
  */
+body {
+  font-weight: 300;
+}
+
 a {
   -webkit-transition: color 0.2s ease-in-out;
   -o-transition: color 0.2s ease-in-out;
@@ -9365,7 +9369,6 @@ blockquote {
   color: #888;
   border-color: #ddd;
   border-width: 10px;
-  font-weight: normal;
   font-style: oblique;
   position: relative;
 }

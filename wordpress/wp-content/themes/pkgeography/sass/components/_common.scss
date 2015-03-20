@@ -2,6 +2,10 @@
  *  Common styles
  */
 
+body {
+	font-weight: $font-weight;
+}
+
 a {
 	@include transition(color .2s ease-in-out);
 }
@@ -16,7 +20,6 @@ blockquote {
 	color: $text-color-gray;
 	border-color: $text-color-light-gray;
 	border-width: 10px;
-	font-weight: normal;
 	font-style: oblique;
 	position: relative;
 
