@@ -9,19 +9,27 @@
 <!-- sidebar -->
 <div id="pkg-sidebar" class="col-md-4 gpk-sidebar">
 
-	<div class="gpk-advert gpk-advert-box gpk-sidebar-section">
-		<small>Advertisement</small>
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- geography-above-fold-desktop -->
-		<ins class="adsbygoogle"
-		     style="display:block;"
-		     data-ad-client="ca-pub-4297681002419123"
-		     data-ad-slot="9154378147"
-		     data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
+	<?php
+	/**
+	 * Display only if not dev environment
+	 */
+
+	if ( ! ENV_DEV ) :
+	?>
+		<div class="gpk-advert gpk-advert-box gpk-sidebar-section">
+			<small>Advertisement</small>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- geography-above-fold-desktop -->
+			<ins class="adsbygoogle"
+			     style="display:block;"
+			     data-ad-client="ca-pub-4297681002419123"
+			     data-ad-slot="9154378147"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	<?php endif; ?>
 
 	<div class="gpk-sidebar-at-social gpk-sidebar-section">
 		<h5 class="gpk-sidebar-heading">Follow us on social media</h5>
@@ -89,18 +97,26 @@
 		?>
 	</div>
 
-	<div class="gpk-advert gpk-advert-box gpk-sidebar-section">
-		<small>Advertisement</small>
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- geography-below-fold-desktop -->
-		<ins class="adsbygoogle"
-		     style="display:block;"
-		     data-ad-client="ca-pub-4297681002419123"
-		     data-ad-slot="9154378147"
-		     data-ad-format="auto"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>
+	<?php
+	/**
+	 * Display only if not dev environment
+	 */
+
+	if ( ! ENV_DEV ) :
+	?>
+		<div class="gpk-advert gpk-advert-box gpk-sidebar-section">
+			<small>Advertisement</small>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- geography-below-fold-desktop -->
+			<ins class="adsbygoogle"
+			     style="display:block;"
+			     data-ad-client="ca-pub-4297681002419123"
+			     data-ad-slot="9154378147"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	<?php endif; ?>
 
 </div>

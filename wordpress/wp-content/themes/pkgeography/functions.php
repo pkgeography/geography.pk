@@ -138,6 +138,9 @@ function jr_adsense_ad( $attr ) {
 
  	$html = '';
 
+ 	//	Return if dev environment
+ 	if ( ENV_DEV ) return $html;
+
  	if ( isset($atts['wrapper']) && $atts['wrapper'] ) {
 		$html .= '<div class="gpk-single-adsense ' . $atts['type'] . '">';
  		$html .= '<small>Advertisement</small>';

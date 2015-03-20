@@ -41,7 +41,10 @@ get_header(); ?>
 
 			<?php
 
-						if ( comments_open() || get_comments_number() ) {
+						/**
+						 * Display comments only if not dev environment
+						 */
+						if ( !ENV_DEV && (comments_open() || get_comments_number()) ) {
 							comments_template();
 						}
 
