@@ -9361,34 +9361,17 @@ a {
 }
 
 blockquote {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 16px;
-  background-color: #eee;
+  font-size: 18px;
+  color: #888;
   border-color: #ddd;
   border-width: 10px;
   font-weight: normal;
   font-style: oblique;
   position: relative;
-  padding-left: 72px;
 }
 @media (max-width: 480px) {
   blockquote {
     padding: 72px 10px 10px;
-  }
-}
-blockquote:before {
-  display: inline-block;
-  content: '“';
-  font-weight: bold;
-  font-size: 6em;
-  position: absolute;
-  color: #fff;
-  top: -18px;
-  left: 0;
-}
-@media (max-width: 480px) {
-  blockquote:before {
-    top: -22px;
   }
 }
 
