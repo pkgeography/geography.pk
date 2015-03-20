@@ -10113,6 +10113,7 @@ blockquote {
   a:after {
     display: inline-block;
     content: attr(href);
+    margin-left: 5px;
   }
 
   blockquote {
