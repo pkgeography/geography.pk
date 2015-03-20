@@ -9366,16 +9366,11 @@ a {
 
 blockquote {
   font-size: 18px;
-  color: #888;
-  border-color: #ddd;
-  border-width: 10px;
+  background-color: #eee;
   font-style: oblique;
   position: relative;
-}
-@media (max-width: 480px) {
-  blockquote {
-    padding: 72px 10px 10px;
-  }
+  padding: 10px 18px;
+  border: 0 none;
 }
 
 /**
@@ -10105,6 +10100,23 @@ blockquote {
 @media (min-width: 768px) {
   .ie8 .gpk-logo, .ie-legacy .gpk-logo {
     background-image: url(../images/pkgeography_logo.png);
+  }
+}
+
+/**
+ * Print styles
+ */
+/**
+ * Print stylesheet
+ */
+@media print {
+  a:after {
+    display: inline-block;
+    content: attr(href);
+  }
+
+  blockquote {
+    border-left: 10px solid #eee;
   }
 }
 

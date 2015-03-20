@@ -1,0 +1,16 @@
+/**
+ * Print stylesheet
+ */
+
+@media print {
+	a {
+		&:after {
+			display: inline-block;
+			content: attr(href);
+		}
+	}
+
+	blockquote {
+		border-left: 10px solid #eee;
+	}
+}

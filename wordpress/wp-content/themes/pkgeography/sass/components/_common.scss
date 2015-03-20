@@ -17,13 +17,9 @@ a {
 
 blockquote {
 	font-size: ($font-size-base + 2);
-	color: $text-color-gray;
-	border-color: $text-color-light-gray;
-	border-width: 10px;
+	background-color: #eee;
 	font-style: oblique;
 	position: relative;
-
-	@media(max-width: $screen-xs) {
-		padding: 72px 10px 10px;
-	}
+	padding: 10px 18px;
+	border: 0 none;
 }
