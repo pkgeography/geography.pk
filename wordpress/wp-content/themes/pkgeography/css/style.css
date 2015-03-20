@@ -10132,7 +10132,7 @@ blockquote {
   .gpk-back-to-top,
   .gpk-primary-nav,
   .gpk-single-adsense,
-  .gpk-primary-nav-mobile {
+  .gpk-primary-nav-mobile, .post-metadata li:nth-child(3) {
     display: none !important;
   }
 
@@ -10151,6 +10151,7 @@ blockquote {
     font-size: 90%;
     font-weight: 300;
     color: #3daeff !important;
+    word-wrap: break-word;
   }
 
   blockquote {

@@ -48,11 +48,18 @@
 			font-size: 90%;
 			font-weight: 300;
 			color: $brand-primary !important;
+			word-wrap: break-word;
 		}
 	}
 
 	blockquote {
 		border-left: 10px solid #eee;
+	}
+
+	.post-metadata li {
+		&:nth-child(3) {
+			@extend .noprint;
+		}
 	}
 
 	.gpk-content {
