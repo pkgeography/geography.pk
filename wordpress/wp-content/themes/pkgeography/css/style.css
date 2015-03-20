@@ -9583,6 +9583,9 @@ blockquote:before {
 .gpk-page [id=ref],
 .gpk-page [id=reference] {
   font-size: small;
+  margin-top: 50px;
+  color: #888;
+  border-top: 1px solid #ddd;
 }
 .gpk-single [id=ref]:before,
 .gpk-single [id=reference]:before,
@@ -9595,6 +9598,23 @@ blockquote:before {
   color: #ddd;
   margin-top: 18px;
   margin-bottom: 10px;
+}
+.gpk-single [id=ref] ol, .gpk-single [id=ref] ul,
+.gpk-single [id=reference] ol,
+.gpk-single [id=reference] ul,
+.gpk-page [id=ref] ol,
+.gpk-page [id=ref] ul,
+.gpk-page [id=reference] ol,
+.gpk-page [id=reference] ul {
+  padding-left: 15px;
+}
+.gpk-single ol[id=ref], .gpk-single ol[id=reference],
+.gpk-single ul[id=ref], .gpk-single ul[id=reference],
+.gpk-page ol[id=ref],
+.gpk-page ol[id=reference],
+.gpk-page ul[id=ref],
+.gpk-page ul[id=reference] {
+  padding-left: 0;
 }
 
 .gpk-post-tags {

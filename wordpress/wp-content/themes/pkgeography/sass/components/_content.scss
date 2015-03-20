@@ -60,6 +60,9 @@
 	[id=ref],
 	[id=reference] {
 		font-size: small;
+		margin-top: 50px;
+		color: $text-color-gray;
+		border-top: 1px solid $text-color-light-gray;
 
 		&:before {
 			display: block;
@@ -70,6 +73,15 @@
 			margin-top: 18px;
 			margin-bottom: 10px;
 		}
+
+		ol, ul {
+			padding-left: 15px;
+		}
+	}
+
+	ol[id=ref], ol[id=reference],
+	ul[id=ref], ul[id=reference] {
+		padding-left: 0;
 	}
 }
 
