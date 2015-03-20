@@ -10125,7 +10125,8 @@ blockquote {
     max-width: auto;
   }
 
-  .noprint, .gpk-advert,
+  .noprint, [id=comments],
+  .gpk-advert,
   .gpk-logo a,
   .gpk-post-tags,
   .gpk-mobile-nav,
