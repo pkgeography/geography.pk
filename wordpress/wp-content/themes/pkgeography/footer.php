@@ -10,7 +10,7 @@
 			<div class="container">
 
 				<!-- at social -->
-				<div class="col-sm-6">
+				<div class="col-sm-6 noprint">
 					<h5>Follow us on our social media channels.</h5>
 
 					<ul class="gpk-social-channels list-inline">
@@ -44,7 +44,7 @@
 								'theme_location' => 'footer',
 								'menu' => 'footer',
 								'container' => false,
-								'menu_class' => 'list-inline gpk-directory',
+								'menu_class' => 'list-inline gpk-directory noprint',
 								'fallback_cb' => false
 							)
 						);
@@ -59,10 +59,13 @@
 				<div class="col-sm-4 col-sm-offset-2">
 					<p><strong>&copy; 2010 &ndash; <?php echo date('Y'); ?> Geography of Pakistan</strong></p>
 					<p>
-						Except where otherwise noted, contents on this site are licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. All code and code samples at this site, blog and projects by Geography of Pakistan are licensed under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>. The contents still remain property of Geography of Pakistan.
+						Except where otherwise noted, contents on this site are licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. All code and code samples at this site, blog and projects by Geography of Pakistan are licensed under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>. The contents still remain property of Geography of Pakistan. <span class="hide print"><?php echo get_bloginfo('url'); ?></span>
 					</p>
-					<p>Did you find a typo, anything broken or want to add new feature(s)?</p>
-					<p><i class="fa fa-github"></i> <strong><a href="https://github.com/pkgeography/geography.pk">Edit this website at Github &raquo;</a></strong></p>
+					<div class="noprint">
+						<p>Did you find a typo, anything broken or want to add new feature(s)?</p>
+						<p><i class="fa fa-github"></i> <strong><a href="https://github.com/pkgeography/geography.pk">Edit this website at Github &raquo;</a></strong></p>
+					</div>
+
 				</div>
 			</div>
 		</div>

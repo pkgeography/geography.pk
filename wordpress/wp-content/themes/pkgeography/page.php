@@ -20,7 +20,7 @@ get_header(); ?>
 						get_template_part( 'content', get_post_format() );
 			?>
 
-			<div class="gpk-static-social text-center">
+			<div class="gpk-static-social text-center noprint">
 				Share the story:
 				<ul class="list-inline">
 					<li>
@@ -62,7 +62,7 @@ get_header(); ?>
 			?>
 		</div>
 
-		<div class="gpk-floating-social fixed">
+		<div class="gpk-floating-social fixed noprint">
 			<ul class="list-unstyled">
 				<li>
 					<a href="https://facebook.com/sharer.php?url=<?php echo get_permalink(); ?>" data-type="facebook" class="gpk-social-share" target="_blank"><i class="fa fa-facebook-square"></i></a>

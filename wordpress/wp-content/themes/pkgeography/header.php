@@ -65,7 +65,10 @@
 
 				<div class="clearfix">
 					<h1 class="gpk-logo">
-						<a rel="home" href="<?php echo site_url(); ?>">Geography of Pakistan</a>
+						<span class="hide print">
+							<img width="200" height="124" src="<?php echo get_stylesheet_directory_uri(); ?>/images/pkgeography_logo_2x.png" alt="Geogrphy of Pakistan">
+						</span>
+						<a class="noprint" rel="home" href="<?php echo site_url(); ?>">Geography of Pakistan</a>
 					</h1>
 
 					<!-- Mobile nav -->

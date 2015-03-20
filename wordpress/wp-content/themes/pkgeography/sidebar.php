@@ -7,7 +7,7 @@
 ?>
 
 <!-- sidebar -->
-<div id="pkg-sidebar" class="col-md-4 gpk-sidebar">
+<div id="pkg-sidebar" class="col-md-4 gpk-sidebar noprint">
 
 	<?php
 	/**

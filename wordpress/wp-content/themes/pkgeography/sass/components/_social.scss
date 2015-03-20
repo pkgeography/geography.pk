@@ -12,7 +12,7 @@
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px;
 
-	@include transition(all, 0.1s ease-in-out);
+	@include transition(all 0.1s ease-in-out);
 
 	&:hover,
 	&:active,
@@ -35,6 +35,8 @@
 
 	a {
 		border-bottom: none;
+
+		@include transition(color 0.1s ease-in-out);
 
 		&:hover,
 		&:active,
