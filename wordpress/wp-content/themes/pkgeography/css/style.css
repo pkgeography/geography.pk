@@ -10066,6 +10066,7 @@ blockquote {
 }
 .gpk-footer a {
   color: #cc3636;
+  font-weight: 500;
   -webkit-transition: color 0.2s ease-out;
   -o-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;

@@ -10,6 +10,7 @@
 
 	a {
 		color: lighten(brown, 10%);
+		font-weight: $headings-font-weight;
 		@include transition(color .2s ease-out);
 
 		&:hover,
