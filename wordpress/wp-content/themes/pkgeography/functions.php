@@ -528,3 +528,9 @@ function gpk_wp_head() {
 
 	echo $html;
 }
+
+
+/**
+ * Include custom functions
+ */
+require dirname(__FILE__) . '/inc/page-toc.php';
