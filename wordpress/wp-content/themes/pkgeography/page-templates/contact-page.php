@@ -55,7 +55,7 @@ if ( isset($_POST['gpk_cabatcha']) && $_POST['gpk_cabatcha'] ) {
 			$errors['name'] = 'Given name is too long.';
 		}
 
-		elseif ( ! $email || strlen($email) > 254 || ! filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+		elseif ( ! $email || strlen($email) > 255 || ! filter_var($email, FILTER_VALIDATE_EMAIL) ) {
 			$errors['email'] = 'A valid email is required.';
 		}
 
@@ -63,7 +63,7 @@ if ( isset($_POST['gpk_cabatcha']) && $_POST['gpk_cabatcha'] ) {
 			$errors['message'] = 'Your message is required.';
 		}
 
-		elseif ( $enquiry || strlen($enquiry) > 5000 ) {
+		elseif ( $enquiry && strlen($enquiry) > 5000 ) {
 			$errors['message'] = 'Your message is bit too long... o.O';
 		}
 

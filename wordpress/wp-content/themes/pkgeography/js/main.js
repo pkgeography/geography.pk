@@ -97,7 +97,7 @@
 			formFields._enquiry.focus();
 		}
 		else {
-			// return true;
+			return true;
 		}
 
 		return e.preventDefault();
