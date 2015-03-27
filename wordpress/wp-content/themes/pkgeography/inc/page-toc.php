@@ -67,7 +67,7 @@ function gpk_page_toc_metabox_save( $post_id ) {
 	}
 
 	// Autosave check
-	if ( define('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
 		return;
 	}
 
