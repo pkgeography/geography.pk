@@ -4,6 +4,11 @@
  * Template Name: Contact Thank You Page
  */
 
+/* Redirect on direct access */
+if ( ! isset($_GET['done']) ) {
+	header('Location: /?da=1&lang=en');
+	exit();
+}
 
 get_header();
 
