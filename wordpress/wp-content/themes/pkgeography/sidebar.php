@@ -157,9 +157,11 @@
 		<?php
 		/**
 		 * Display only if not dev environment
+		 *
+		 * @internal: Disabled temporary
 		 */
 
-		if ( ! ENV_DEV ) :
+		/* if ( ! ENV_DEV ) :
 		?>
 			<div class="gpk-advert gpk-advert-box gpk-sidebar-section">
 				<small>Advertisement</small>
@@ -174,7 +176,7 @@
 				(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
 			</div>
-		<?php endif; ?>
+		<?php endif; */ ?>
 
 	</div>
 </div>
