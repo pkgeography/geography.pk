@@ -9434,12 +9434,15 @@ blockquote {
   padding: 10px 0 10px;
   cursor: pointer;
   color: #090;
+  text-decoration: none;
 }
 .gpk-mobile-nav-btn:after {
   position: relative;
   content: "MENU";
   display: block;
   font-size: 7px;
+  color: #090;
+  text-decoration: none;
 }
 
 .icon-bar {

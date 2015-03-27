@@ -73,18 +73,21 @@
 
 					<!-- Mobile nav -->
 					<div class="gpk-primary-nav-mobile">
-						<div class="gpk-mobile-nav-btn" role="button" rel="nav">
+						<a href="#menu-footer_nav" class="gpk-mobile-nav-btn" role="button" rel="nav">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-						</div>
+						</a>
 					</div>
 				</div>
 
 				<?php
 					/**
 					 * Primary Nav
+					 *
+					 * Disabled intentionally for UX experiment
 					 */
+					/*
 					if ( has_nav_menu('primary') ) :
 						wp_nav_menu( array(
 								'theme_location' => 'primary',
@@ -94,7 +97,7 @@
 								'fallback_cb' => false
 							)
 						);
-					endif;
+					endif; */
 				?>
 
 

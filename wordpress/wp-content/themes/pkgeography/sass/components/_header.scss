@@ -54,12 +54,15 @@
 	padding: 10px 0 10px;
 	cursor: pointer;
 	color: $gpk-brand-secondary;
+	text-decoration: none;
 
 	&:after {
 		position: relative;
 		content: "MENU";
 		display: block;
 		font-size: 7px;
+		color: $gpk-brand-secondary;
+		text-decoration: none;
 	}
 }
 

@@ -140,11 +140,16 @@
 
 		});
 
-		// Toggle mobile navigation menu
+		/**
+		 * Toggle mobile navigation menu
+		 *
+		 * Disabled intentionally for UX experiment
+		 * /
+
 		$('.gpk-mobile-nav-btn').on('click', function(e) {
 			e.preventDefault();
 			$('.gpk-mobile-nav').slideToggle();
-		});
+		}); */
 
 		// Form client-side validation
 		$('#submitEnquiry').on('click', pkg.validate);
