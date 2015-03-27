@@ -6,31 +6,47 @@
 
 ?>
 
-<!-- sidebar -->
 <div id="pkg-sidebar" class="col-md-4 gpk-sidebar noprint">
 
 	<?php
 	/**
-	 * Display only if not dev environment
+	 * Display Table of contents for pages with TOC enabled
 	 */
 
-	if ( ! ENV_DEV ) :
-	?>
-		<div class="gpk-advert gpk-advert-box gpk-sidebar-section">
-			<small>Advertisement</small>
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- geography-above-fold-desktop -->
-			<ins class="adsbygoogle"
-			     style="display:block;"
-			     data-ad-client="ca-pub-4297681002419123"
-			     data-ad-slot="9154378147"
-			     data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-		</div>
-	<?php endif; ?>
+		if ( is_page() ) {
+			if ( $gpk_toc = get_post_meta($post->ID, '_gpk_page_toc', true) ) {
 
+				if ( $gpk_toc === 'on' ) {
+
+					/**
+					 * List all child pages as TOC
+					 */
+					$sub_pages = wp_list_pages( array(
+							'child_of' => $post->post_parent ? $post->post_parent : $post->ID,
+							'depth' => '0',
+							'echo' => false,
+							'post_type' => 'page',
+							'post_status' => 'publish',
+							'title_li' => ''
+						)
+					);
+
+					if ( $sub_pages ) : ?>
+						<div class="gpk-sidebar-toc gpk-sidebar-section">
+							<h5 class="gpk-sidebar-heading"><i class="fa fa-list"></i> Table of Contents</h5>
+							<?php printf('<ul class="%s">%s</ul>', 'gpk-toc-list', $sub_pages); ?>
+						</div>
+					<?php endif;
+				}
+			}
+		}
+	?>
+
+	<?php
+	/**
+	 * List social media channels
+	 */
+	?>
 	<div class="gpk-sidebar-at-social gpk-sidebar-section">
 		<h5 class="gpk-sidebar-heading">Follow us on social media</h5>
 		<ul class="gpk-social-channels list-inline">
@@ -56,6 +72,11 @@
 	</div>
 
 
+	<?php
+	/**
+	 * List categories in blog
+	 */
+	?>
 	<div class="gpk-categories gpk-sidebar-section">
 		<h5 class="gpk-sidebar-heading">Categories</h5>
 		<?php
@@ -74,6 +95,35 @@
 		?>
 	</div>
 
+
+	<?php
+	/**
+	 * Display ads only in production
+	 */
+
+	if ( ! ENV_DEV ) :
+	?>
+		<div class="gpk-advert gpk-advert-box gpk-sidebar-section">
+			<small>Advertisement</small>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- geography-above-fold-desktop -->
+			<ins class="adsbygoogle"
+			     style="display:block;"
+			     data-ad-client="ca-pub-4297681002419123"
+			     data-ad-slot="9154378147"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+	<?php endif; ?>
+
+
+	<?php
+	/**
+	 * Display tags (topics) cloud
+	 */
+	?>
 	<div class="gpk-tag-cloud gpk-sidebar-section">
 		<h5 class="gpk-sidebar-heading">Topics</h5>
 		<?php
@@ -90,6 +140,12 @@
 		?>
 	</div>
 
+
+	<?php
+	/**
+	 * Display archives
+	 */
+	?>
 	<div class="gpk-archives gpk-sidebar-section">
 		<h5 class="gpk-sidebar-heading">Archives</h5>
 		<?php

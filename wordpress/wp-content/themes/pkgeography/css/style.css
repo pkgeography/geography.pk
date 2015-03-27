@@ -9826,6 +9826,10 @@ blockquote {
   color: #888;
 }
 
+.gpk-toc-list {
+  padding-left: 15px;
+}
+
 /**
  * Social style
  */
