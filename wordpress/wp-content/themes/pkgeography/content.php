@@ -53,14 +53,16 @@
 			</li>
 		</ul>
 
-		<?php
+		<?php /*
 			if ( is_single() ) :
 
 				/**
 				 * Adsense banner
-				 */
+				 *
+				 * Disabled temporary
+				 * /
 				echo do_shortcode( '[jr_adsense id="pkgeography-top-ad" client="ca-pub-4297681002419123" slot="7668179343" type="banner"]' );
-			endif;
+			endif; */
 		?>
 
 	</div>
