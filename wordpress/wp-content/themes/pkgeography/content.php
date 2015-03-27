@@ -6,7 +6,7 @@
 
 ?>
 
-<article class="gpk-article <?php if ( is_single() ) echo 'gpk-single-post'; ?>" id="post-<?php echo the_ID(); ?>">
+<section class="gpk-article <?php if ( is_single() ) echo 'gpk-single-post'; ?>" id="post-<?php echo the_ID(); ?>">
 
 	<header class="page-header">
 		<?php
@@ -31,7 +31,7 @@
 
 	</header>
 
-	<div class="post-metadata">
+	<section class="post-metadata">
 		<ul class="list-inline">
 			<li><i class="fa fa-calendar-o"></i>&nbsp;
 				<time datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>">
@@ -65,9 +65,9 @@
 			endif; */
 		?>
 
-	</div>
+	</section>
 
-	<div class="post-content clearfix">
+	<article class="post-content clearfix">
 		<?php
 			if ( is_singular() ) {
 				the_content();
@@ -83,6 +83,8 @@
 
 				/**
 				 * Adsense banner
+				 *
+				 * Disabled temporary
 				 */
 				// echo do_shortcode( '[jr_adsense id="pkgeography-bottom-ad" client="ca-pub-4297681002419123" slot="7668179343" type="banner"]' );
 
@@ -92,6 +94,6 @@
 			}
 		?>
 
-	</div>
+	</article>
 
-</article>
+</section>
