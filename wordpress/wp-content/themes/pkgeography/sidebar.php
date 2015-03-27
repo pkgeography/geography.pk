@@ -6,6 +6,7 @@
 
 ?>
 
+<div class="row">
 <div id="pkg-sidebar" class="col-md-4 gpk-sidebar noprint">
 
 	<?php
@@ -33,7 +34,7 @@
 
 					if ( $sub_pages ) : ?>
 						<div class="gpk-sidebar-toc gpk-sidebar-section">
-							<h5 class="gpk-sidebar-heading"><i class="fa fa-list"></i> Table of Contents</h5>
+							<div class="gpk-sidebar-heading"><i class="fa fa-list"></i> Table of Contents</div>
 							<?php printf('<ul class="%s">%s</ul>', 'gpk-toc-list', $sub_pages); ?>
 						</div>
 					<?php endif;
@@ -48,7 +49,7 @@
 	 */
 	?>
 	<div class="gpk-sidebar-at-social gpk-sidebar-section">
-		<h5 class="gpk-sidebar-heading">Follow us on social media</h5>
+		<div class="gpk-sidebar-heading"><i class="fa fa-share-alt"></i> Follow us on social media</div>
 		<ul class="gpk-social-channels list-inline">
 			<li>
 				<a class="gpk-icon-facebook" href="http://facebook.com/pkgeography" target="_blank"><i class="fa fa-facebook-square"></i></a>
@@ -78,7 +79,7 @@
 	 */
 	?>
 	<div class="gpk-categories gpk-sidebar-section">
-		<h5 class="gpk-sidebar-heading">Categories</h5>
+		<div class="gpk-sidebar-heading"><i class="fa fa-files-o"></i> Categories</div>
 		<?php
 			$categories = wp_list_categories( array(
 					'style' => 'list',
@@ -125,7 +126,7 @@
 	 */
 	?>
 	<div class="gpk-tag-cloud gpk-sidebar-section">
-		<h5 class="gpk-sidebar-heading">Topics</h5>
+		<div class="gpk-sidebar-heading"><i class="fa fa-pencil-square-o"></i> Topics</div>
 		<?php
 			wp_tag_cloud( array(
 					'echo' => true,
@@ -147,7 +148,7 @@
 	 */
 	?>
 	<div class="gpk-archives gpk-sidebar-section">
-		<h5 class="gpk-sidebar-heading">Archives</h5>
+		<div class="gpk-sidebar-heading"><i class="fa fa-archive"></i> Archives</div>
 		<?php
 			wp_get_archives('type=monthly');
 		?>
@@ -175,4 +176,5 @@
 		</div>
 	<?php endif; ?>
 
+</div>
 </div>

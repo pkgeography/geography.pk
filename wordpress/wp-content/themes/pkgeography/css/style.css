@@ -1518,7 +1518,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .gpk-sidebar-heading, .h5, .h6 {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.15;
@@ -1534,8 +1534,9 @@ h6 .small,
 .h1 small,
 .h1 .small, .h2 small,
 .h2 .small, .h3 small,
-.h3 .small, .h4 small,
-.h4 .small, .h5 small,
+.h3 .small, .h4 small, .gpk-sidebar-heading small,
+.h4 .small,
+.gpk-sidebar-heading .small, .h5 small,
 .h5 .small, .h6 small,
 .h6 .small {
   font-weight: normal;
@@ -1561,15 +1562,16 @@ h3 .small, .h3 small,
   font-size: 65%;
 }
 
-h4, .h4,
+h4, .h4, .gpk-sidebar-heading,
 h5, .h5,
 h6, .h6 {
   margin-top: 11px;
   margin-bottom: 11px;
 }
 h4 small,
-h4 .small, .h4 small,
+h4 .small, .h4 small, .gpk-sidebar-heading small,
 .h4 .small,
+.gpk-sidebar-heading .small,
 h5 small,
 h5 .small, .h5 small,
 .h5 .small,
@@ -1591,7 +1593,7 @@ h3, .h3 {
   font-size: 28px;
 }
 
-h4, .h4 {
+h4, .h4, .gpk-sidebar-heading {
   font-size: 20px;
 }
 
@@ -9521,6 +9523,7 @@ blockquote {
   border-radius: 3px;
   padding-top: 10px;
   padding-bottom: 4em;
+  margin-bottom: 18px;
 }
 .gpk-content .page-header {
   padding-bottom: 0;
@@ -9618,6 +9621,9 @@ blockquote {
   border-bottom: 1px solid #090;
   margin-bottom: 2em;
   padding-bottom: 18px;
+}
+.gpk-article > .post-metadata {
+  font-size: 14px;
 }
 
 .post-metadata {
@@ -9813,8 +9819,12 @@ blockquote {
 .gpk-sidebar-heading {
   margin-top: 0;
   padding-bottom: 10px;
-  color: #090;
+  color: #4d4d4d;
   border-bottom: 1px dotted #090;
+}
+.gpk-sidebar-heading .fa {
+  color: #aeaeae;
+  font-size: 14px;
 }
 
 .gpk-sidebar-at-social .gpk-social-channels {

@@ -11,6 +11,7 @@
 		border-radius: 3px;
 		padding-top: 10px;
 		padding-bottom: 4em;
+		margin-bottom: 18px;
 	}
 
 	.page-header {
@@ -109,6 +110,10 @@
 		border-bottom: 1px solid $gpk-brand-secondary;
 		margin-bottom: 2em;
 		padding-bottom: 18px;
+	}
+
+	> .post-metadata {
+		font-size: $font-size-small;
 	}
 }
 

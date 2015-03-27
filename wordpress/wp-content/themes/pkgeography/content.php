@@ -33,7 +33,7 @@
 
 	<div class="post-metadata">
 		<ul class="list-inline">
-			<li><i class="fa fa-clock-o"></i>&nbsp;
+			<li><i class="fa fa-calendar-o"></i>&nbsp;
 				<time datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>">
 					<?php echo get_the_date('F jS, Y'); ?>
 				</time>
