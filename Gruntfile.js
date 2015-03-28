@@ -84,7 +84,10 @@ module.exports = function(grunt) {
 				}
 			},
 			php: {
-				files: ['<%= config.app %>/{,*/}*.{php,html}'],
+				files: [
+					'<%= config.app %>/{,*/}*.{php,html}',
+					'<%= config.root %>/Gruntfile.js'
+				],
 				options: {
 					livereload: true
 				}
