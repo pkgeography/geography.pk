@@ -9444,6 +9444,13 @@ blockquote {
   color: #090;
   text-decoration: none;
 }
+.gpk-mobile-nav-btn:after:active, .gpk-mobile-nav-btn:after:focus, .gpk-mobile-nav-btn:after:hover {
+  text-decoration: none;
+}
+.gpk-mobile-nav-btn:active, .gpk-mobile-nav-btn:focus, .gpk-mobile-nav-btn:hover {
+  text-decoration: none;
+  color: white;
+}
 
 .icon-bar {
   position: relative;
@@ -9453,6 +9460,7 @@ blockquote {
   margin-bottom: 4px;
   border-radius: 4px;
   background-color: #090;
+  text-decoration: none;
 }
 
 .gpk-mobile-nav {
