@@ -9,6 +9,7 @@
 /**
  * Setup current environment
  */
+define( 'PKG_VERSION', '2.0.1' );
 define( 'PKG_SERVER', 'http://geography.pk' );
 define( 'ENV_DEV', (strpos(PKG_SERVER, $_SERVER['SERVER_NAME']) === false) );
 
@@ -188,7 +189,7 @@ function gpk_theme_scripts() {
 	/**
 	 * Add site stylesheets
 	 */
-	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/css/style.min.css', null, 'v2.0.0');
+	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/css/style.min.css', null, PKG_VERSION);
 
 	/**
 	 * Add Respond.js
@@ -210,13 +211,13 @@ function gpk_theme_scripts() {
 	/**
 	 * Add main site script
 	 */
-	wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.min.js', array('jquery-min'), 'v2.0.0', true);
+	wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.min.js', array('jquery-min'), PKG_VERSION, true);
 
 	/**
 	 * Inject LiveReload script
 	 */
 	if ( strpos($_SERVER['SERVER_NAME'], 'localhost') || $_SERVER['SERVER_NAME'] === 'localhost' )
-		wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js', null, 'v2.0.0', true);
+		wp_enqueue_script('livereload', 'http://localhost:35729/livereload.js', null, PKG_VERSION, true);
 
 }
 

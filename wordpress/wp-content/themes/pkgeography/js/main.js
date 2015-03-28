@@ -145,7 +145,6 @@
 		 *
 		 * Disabled intentionally for UX experiment
 		 * /
-
 		$('.gpk-mobile-nav-btn').on('click', function(e) {
 			e.preventDefault();
 			$('.gpk-mobile-nav').slideToggle();
