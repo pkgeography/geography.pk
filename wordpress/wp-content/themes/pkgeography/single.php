@@ -45,7 +45,7 @@ get_header(); ?>
 							/**
 							 * Display comments only if not dev environment
 							 */
-							if ( !ENV_DEV && (comments_open() || get_comments_number()) ) {
+							if ( comments_open() || get_comments_number() ) {
 								comments_template();
 							}
 

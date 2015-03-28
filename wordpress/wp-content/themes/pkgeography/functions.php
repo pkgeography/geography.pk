@@ -128,25 +128,28 @@ remove_filter('term_description', 'wpautop');
  */
 add_shortcode('jr_adsense', 'jr_adsense_ad');
 function jr_adsense_ad( $attr ) {
+ 	$html = '';
+
+ 	//	Return if dev environment
+ 	if ( ENV_DEV ) return $html;
+
  	$atts = shortcode_atts( array(
  			'id' => 'geography-above-fold-desktop',
  			'client' => 'ca-pub-4297681002419123',
  			'slot' => '9154378147',
  			'type' => 'block',
  			'wrapper' => true
- 		), $attr, 'jr_adsense_ad' );
-
- 	$html = '';
-
- 	//	Return if dev environment
- 	if ( ENV_DEV ) return $html;
-
- 	if ( isset($atts['wrapper']) && $atts['wrapper'] ) {
-		$html .= '<div class="gpk-single-adsense ' . $atts['type'] . '">';
- 		$html .= '<small>Advertisement</small>';
- 	}
+ 		),
+ 		$attr,
+ 		'jr_adsense_ad'
+ 	);
 
  	if ( isset($atts['client']) && $atts['client'] && isset($atts['slot']) && $atts['slot'] ) {
+
+	 	if ( isset($atts['wrapper']) && $atts['wrapper'] ) {
+			$html .= '<div class="gpk-single-adsense ' . $atts['type'] . '">';
+	 		$html .= '<small>Advertisement</small>';
+	 	}
 
 		$html .= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
 		$html .= '<!-- ' . $atts['id'] . ' -->';
@@ -158,17 +161,17 @@ function jr_adsense_ad( $attr ) {
 		$html .= '<script>';
 		$html .= '(adsbygoogle = window.adsbygoogle || []).push({});';
 		$html .= '</script>';
- 	}
 
- 	if ( isset($atts['wrapper']) && $atts['wrapper'] )
- 		$html .= '</div>';
+	 	if ( isset($atts['wrapper']) && $atts['wrapper'] )
+	 		$html .= '</div>';
+ 	}
 
  	return $html;
 }
 
 
 /**
- * Author page: Clean social URLs
+ * Author page: Get social handles from a URL
  */
 function gpk_clean_url( $url ) {
 	$arr = explode('/', $url);

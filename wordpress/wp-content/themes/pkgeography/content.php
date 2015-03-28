@@ -94,7 +94,7 @@
 	/**
 	 * Adsense banner advert above comments
 	 */
-	if ( ! ENV_DEV && is_singular() && (comments_open() || get_comments_number()) ) {
+	if ( is_singular() && (comments_open() || get_comments_number()) ) {
 		echo '<section class="gpk-ad-lower-banner">';
 		echo do_shortcode( '[jr_adsense id="pkgeography-bottom-ad" client="ca-pub-4297681002419123" slot="7668179343" type="banner"]' );
 		echo '</section>';
