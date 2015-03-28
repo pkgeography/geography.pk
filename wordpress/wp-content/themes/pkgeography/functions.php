@@ -272,7 +272,12 @@ function gpk_get_featured_image() {
 
 	if ( is_singular() ) {
 		if ( has_post_thumbnail($post->ID) ) {
-			return get_the_post_thumbnail($post->ID, 'large');
+			if ( $thumbnail_id = get_post_thumbnail_id( $post->ID ) ) {
+				return wp_get_attachment_image_src( (int) $thumbnail_id, 'large' );
+			}
+			else {
+				return get_stylesheet_directory_uri() . '/images/pkgeography_1024x1024.png';
+			}
 		}
 		else {
 			return get_stylesheet_directory_uri() . '/images/pkgeography_1024x1024.png';
